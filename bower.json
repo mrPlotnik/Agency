@@ -1,0 +1,21 @@
+{
+  "name": "Agency",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Plotnik <plotnik1992@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/mrPlotnik/agency",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/libs/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
+}
