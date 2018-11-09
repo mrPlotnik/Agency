@@ -2,6 +2,7 @@ node_modules
 app/css
 app/libs
 app/fonts
-app/index.html
 app/scripts.min.js
 dist
+
+*.html
