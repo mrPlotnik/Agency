@@ -1,5 +1,40 @@
 @import "color"
+@import "libs"
+
+$text-color: #d0d1d5
+$bg_color: #181a28
+
+*
+	// border: 1px solid #fff
 
 body	
+	background-color: $bg_color
+	color: $text-color
 	font-size: 16px
+	font-family: Arial, sans-serif
+	.main-head
+		min-height: 100vh
+		// overflow: hidden
+		.row-flex	
+			height: 100vh		
+			.logo-line
+				height: 150px
+			.right-col				
+				background-image: url(../img/bg_main_right.jpg)
+				background-size: cover
+			.left-col				
+				background-image: url(../img/bg_main_left.jpg)
+				background-size: cover	
+
+
+
+	ul
+		li
+			list-style-type: none;
+			font-size: 1.8em
+			font-weight: 900
+			line-height: 1
+			text-transform: uppercase
+			margin-bottom: 60px
+
 
