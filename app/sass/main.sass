@@ -1,40 +1,82 @@
 @import "color"
 @import "libs"
-
-$text-color: #d0d1d5
-$bg_color: #181a28
-
-*
-	// border: 1px solid #fff
-
+@import "vars"
+	
 body	
 	background-color: $bg_color
 	color: $text-color
 	font-size: 16px
 	font-family: Arial, sans-serif
-	.main-head
-		min-height: 100vh
-		// overflow: hidden
-		.row-flex	
-			height: 100vh		
-			.logo-line
-				height: 150px
-			.right-col				
-				background-image: url(../img/bg_main_right.jpg)
-				background-size: cover
-			.left-col				
-				background-image: url(../img/bg_main_left.jpg)
-				background-size: cover	
+
+.l-wrap
+	width: 60%	
+	text-align: left
+	.logo
+		width: 100%
+		height: 18vh		
+		.img
+			width: 100px		
+			
+	.mid-1 
+		width: 100%
+		height: 40vh
+		font-weight: 900	
+		color: $accent-color
+		text-transform: uppercase	
+	.mid-2	
+		margin: 0 auto
+		height: 20vh
+		font-size: .9em
+		font-weight: 600
+	.bot
+		border-bottom: 1px solid $accent-color
+		height: 7vh
+		p
+			font-size: .8em
+			margin-bottom: 5px
+			&:nth-child(2)	
+				text-transform: uppercase
+				font-weight: 600	
+			img
+				width: 6px
+				padding-bottom: 2px	
+				margin-left: 5px
+
+.main-head
+	min-height: 100vh
+	// overflow: hidden
+	.row-flex	
+		height: 100vh					
+		.left-col				
+			background-image: url(../img/bg_main_left.jpg)
+			background-size: cover	
+			text-align: center
+		.right-col				
+			background-image: url(../img/bg_main_right.jpg)
+			background-size: cover
+		
+			ul
+				width: 100%
+				li
+					list-style-type: none
+					font-size: 1.7em
+					font-weight: 900
+					line-height: 1
+					text-transform: uppercase
+					padding: 30px 25px			
+					border-bottom: 2px solid rgba(0, 0, 0, 0)
+					+mt(.5s)		
+					&:hover
+						border-bottom: 2px solid $accent-color
+						box-sizing: border-box
+						color: $accent-color
+						background-color: rgba(31, 35, 53, 0.65)
+
+					.pointer	
+						float: right
+	
 
 
-
-	ul
-		li
-			list-style-type: none;
-			font-size: 1.8em
-			font-weight: 900
-			line-height: 1
-			text-transform: uppercase
-			margin-bottom: 60px
+				
 
 
