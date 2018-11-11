@@ -21,8 +21,6 @@
 	&::after
 		content: "close"
 
-
-
 .top_mnu
 	position: fixed
 	width: 20%
@@ -32,15 +30,19 @@
 	right: 0
 	top: 0
 	display: none
+	text-align: center
+	
 	ul, li
 		list-style-type: none
+		width: 100%
+	ul		
+		animation-duration: 0.01s
 		padding: 0
 		margin: 0
-	ul
-		margin-top: 180px
-		text-align: center
-		animation-duration: 0.01s
 		li
+			text-align: right
+			p
+				padding-right: 70px
 			&:nth-child(1) a
 				-webkit-animation-delay: 0s
 				animation-delay: 0s
@@ -57,20 +59,25 @@
 			color: #fff
 			display: block
 			text-transform: uppercase
-			font-size: 12px
+			font-size: .9em
+			font-weight: 900
 			opacity: 0
 			position: relative
-			height: 60px
-			outline: none
+			height: 40px				
+			&:hover
+				color: $accent-color	
+			p
+				margin: 0
+				padding: 0
+				padding-right: 70px			
 			span
 				display: block
 				position: relative
-				top: -40px
+				top: -31px
 				left: 0
 				height: 100%
 				transition: all 0.5s ease
 				&:hover
 					background-color: rgba(255, 255, 255, 0.08)
-	a
-		letter-spacing: 4px
-		text-decoration: none
+
+		
