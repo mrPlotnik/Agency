@@ -2,16 +2,27 @@
 html(lang="en")
 head
 	meta(charset="UTF-8")
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">	
 	link(rel="stylesheet", href="../css/main.css")
 	title Agency
 body
-	header#main_head
-		.container
-			.row
-				.col-md-3
-				.col-md-6
-				.col-md-3
+	header.main-head.container-fluid
+		.row.align-items-center.row-flex
+			.col-lg-4.col-md-4.left-col
+				.row.align-items-center.row-flex
+			.col-lg-8.col-md-8.right-col
+				.row.align-items-center.row-flex
+					ul
+						li
+							| editorial<br> and writing
+						li
+							| powerpoint<br> and animation
+						li
+							| audio and video<br> production
+						li
+							| digital<br> production
+			
 
-	
+
 
 		script(src="../js/common.js")
