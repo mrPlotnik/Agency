@@ -1,12 +1,23 @@
 @import "color"
 @import "libs"
 @import "vars"
+@import "mnu"
 	
+*
+	text-decoration: none !important	
+
 body	
 	background-color: $bg_color
 	color: $text-color
 	font-size: 16px
 	font-family: Arial, sans-serif
+
+a
+	color: #fff
+	+mt(.5s)
+	&:hover
+		color: $accent-color	
+		
 
 .l-wrap
 	width: 60%	
