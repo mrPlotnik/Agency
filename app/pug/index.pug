@@ -7,12 +7,25 @@ head
 	title Agency
 body
 	header.main-head.container-fluid
+
+		button.toggle_mnu
+
+		<nav class="top_mnu" style="display: none;">
+			<ul>
+				<li><a href="#about" class="_mPS2id-h">Обо мне<span></span></a></li>
+				<li><a href="#resume" class="_mPS2id-h">Резюме<span></span></a></li>
+				<li><a href="#portfolio" class="_mPS2id-h">Портфолио<span></span></a></li>
+				<li><a href="#contacts" class="_mPS2id-h">Контакты<span></span></a></li>
+			</ul>
+		</nav>
+
 		.row.align-items-center.row-flex
 			.col-lg-4.col-md-4.left-col
 				.row.row-flex
 					.container.l-wrap
 						.logo
-							img(src="../img/logo.jpg" class="img")
+							a(href="#")
+								img(src="../img/logo.jpg" class="img")
 						.mid-1
 							p
 								|what we're good at ...
@@ -23,7 +36,7 @@ body
 							p
 								|Looking for other services?
 							p
-								|find it here 
+								a(href="#") find it here
 								img(src="../img/pointer.png", alt="")
 			.col-lg-8.col-md-8.right-col
 				.row.align-items-center.row-flex
