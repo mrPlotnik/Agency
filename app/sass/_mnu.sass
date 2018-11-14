@@ -13,6 +13,9 @@
 	font-weight: 900
 	text-transform: uppercase
 	padding-top: 20px
+	animation: pulse 2s infinite
+	&:hover 
+		animation: none
 	
 .not-active
 	&::after
@@ -30,54 +33,68 @@
 	right: 0
 	top: 0
 	display: none
-	text-align: center
-	
-	ul, li
-		list-style-type: none
-		width: 100%
-	ul		
-		animation-duration: 0.01s
-		padding: 0
-		margin: 0
-		li
-			text-align: right
-			p
-				padding-right: 70px
-			&:nth-child(1) a
-				-webkit-animation-delay: 0s
-				animation-delay: 0s
-			&:nth-child(2) a
-				-webkit-animation-delay: 0.1s
-				animation-delay: 0.1s
-			&:nth-child(3) a
-				-webkit-animation-delay: 0.2s
-				animation-delay: 0.2s
-			&:nth-child(4) a
-				-webkit-animation-delay: 0.3s
-				animation-delay: 0.3s
-		a
-			color: #fff
-			display: block
-			text-transform: uppercase
-			font-size: .9em
-			font-weight: 900
-			opacity: 0
-			position: relative
-			height: 40px				
-			&:hover
-				color: $accent-color	
-			p
-				margin: 0
-				padding: 0
-				padding-right: 70px			
-			span
-				display: block
-				position: relative
-				top: -31px
-				left: 0
-				height: 100%
-				transition: all 0.5s ease
-				&:hover
-					background-color: rgba(255, 255, 255, 0.08)
+	text-align: right	
 
-		
+	.r-wrap
+		width: 100%
+		margin-right: 70px
+		margin-left: 30px
+		.r-top		
+			height: 35vh
+		.r-mid-1		
+			height: 25vh		
+			ul, li
+				list-style-type: none
+				width: 100%
+			ul		
+				// animation-duration: 0.01s
+				padding: 0
+				margin: 0
+				li
+					text-align: right
+					p
+						padding-right: 70px
+					&:nth-child(1) a						
+						animation-delay: 0s
+					&:nth-child(2) a						
+						animation-delay: 0.1s
+					&:nth-child(3) a						
+						animation-delay: 0.2s
+					&:nth-child(4) a						
+						animation-delay: 0.3s
+				a
+					color: #fff
+					display: block
+					text-transform: uppercase
+					font-size: .9em
+					font-weight: 900
+					position: relative
+					height: 40px				
+					&:hover
+						color: $accent-color	
+					p
+						margin: 0
+						padding: 0					
+		.r-mid
+			animation-duration: 0.01s		
+			.r-mid-2						
+				animation-delay: 0.9s	
+			.r-mid-3 	
+				animation-delay: 1s
+			.r-bot	
+				animation-delay: 1.1s	
+
+@keyframes pulse  
+	0%    
+		box-shadow: 0 0 0 0 rgba(255, 127, 146, .5)
+	70%    
+		box-shadow: 0 0 0 7px rgba(237, 35, 64, 0)
+	100%    
+		box-shadow: 0 0 0 0 rgba(237, 35, 64, 0)
+
+
+
+
+
+
+	
