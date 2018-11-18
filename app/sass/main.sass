@@ -1,6 +1,7 @@
 @import "color"
 @import "libs"
 @import "vars"
+@import "fixed-text"
 @import "mnu"
 	
 *
@@ -16,16 +17,19 @@ a
 	color: #fff
 	+mt(.5s)
 	&:hover
-		color: $accent-color			
+		color: $accent-color	
+
+.l-logo
+	width: 100%
+	height: 20vh		
+
+	.img
+		width: 100px					
 
 .l-wrap
 	width: 60%	
 	text-align: left
-	.l-logo
-		width: 100%
-		height: 20vh		
-		.img
-			width: 100px				
+			
 .l-mid-1 
 	width: 100%
 	height: 40vh
@@ -54,39 +58,41 @@ a
 					
 
 .main-head
-	min-height: 100vh
+	height: 100vh
 	// overflow: hidden
-	.row-flex	
+	.row-100vh	
 		height: 100vh					
-		.left-col				
-			background-image: url(../img/bg_main_left.jpg)
-			background-size: cover	
-			text-align: center
-		.right-col				
-			background-image: url(../img/bg_main_right.jpg)
-			background-size: cover
+	.left-col				
+		background-image: url(../img/bg_main_left.jpg)
+		background-size: cover	
+		text-align: center
+	.right-col				
+		background-image: url(../img/bg_main_right.jpg)
+		background-size: cover
+		height: 100vh
+		ul
+			width: 100%				
+			li
+				list-style-type: none
+				font-size: 1.7em
+				font-weight: 900
+				line-height: 1
+				text-transform: uppercase
+				padding: 30px 100px	30px 25px		
+				border-bottom: 2px solid rgba(0, 0, 0, 0)
+				+mt(.5s)		
+				&:hover
+					border-bottom: 2px solid $accent-color
+					box-sizing: border-box
+					color: $accent-color
+					background: rgba(31, 35, 53, 0.65)
+					background: linear-gradient(to top, #1f2335a6, #ed234000)
+				.pointer	
+					float: right
+
+
+					
 		
-			ul
-				width: 100%
-				li
-					list-style-type: none
-					font-size: 1.7em
-					font-weight: 900
-					line-height: 1
-					text-transform: uppercase
-					padding: 30px 25px			
-					border-bottom: 2px solid rgba(0, 0, 0, 0)
-					+mt(.5s)		
-					&:hover
-						border-bottom: 2px solid $accent-color
-						box-sizing: border-box
-						color: $accent-color
-						background-color: rgba(31, 35, 53, 0.65)
-
-					.pointer	
-						float: right
-	
-
 
 				
 

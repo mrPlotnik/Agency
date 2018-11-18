@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+	
+
 	$(".right-col ul li img").hide();
 
 	$(".right-col ul li").hover(
@@ -34,6 +36,37 @@ $(document).ready(function() {
 			
 		};
 	});
+
+	function heightDetect() {
+		var height = $("html").height();
+		$(".fixed-text").css("width", height);
+	};
+
+	heightDetect();
+
+
+	// УРОВНИ САЙТА
+	$(".str-about").hide();
+	$(".str-contact").hide();
+
+	$("#references").click(function() {
+		$(".str-contact").hide();
+		$(".str-about").hide();
+		$(".str-references").fadeIn(900);
+	});
+
+	$("#about").click(function() {
+		$(".str-references").hide();
+		$(".str-contact").hide();
+		$(".str-about").fadeIn(900);
+	});	
+
+	$("#contact").click(function() {
+		$(".str-references").hide();
+		$(".str-about").hide();
+		$(".str-contact").fadeIn(900);
+	});
+
 });  	
 		
 

@@ -8,61 +8,34 @@ head
 body
 	header.main-head.container-fluid
 
-		button.toggle_mnu
-	
-		nav.top_mnu.container
-			.row.row-flex
-				.r-wrap
-					.r-top
-					.r-mid-1
-						ul
-							li
-								a(href="#" class="") 
-									p
-										| Обо мне
-									span
-							li
-								a(href="#" class="") 
-									p
-										| Резюме
-									span
-							li
-								a(href="#" class="")
-									p 
-										| Портфолио
-									span
-							li
-								a(href="#" class="")
-									p 
-										| Контакты
-									span
-					.r-mid
-						.r-mid-2
-							p
-								|Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut 
-						.r-mid-3
-							p
-								|Looking for other services?
-							p
-								a(href="#") find it here
-								img(src="../img/pointer.png", alt="")
-						.r-bot
-							p
-								| BOT Lorem ipsum dolor sit amet, aliquip ex
+		include menu.pug
 
-		.row.align-items-center.row-flex
+		.fixed-text
+			| agency
+			.text.active-1
+
+		.row
 			.col-lg-4.col-md-4.left-col
-				.row.row-flex
+
+				.row
 					.container.l-wrap
 						.l-logo
 							a(href="#")
 								img(src="../img/logo.jpg" class="img")
 						.l-mid-1
-							p
+							p(class="str-references")
 								|what we're good at ...
+							p(class="str-about")
+								|about ...
+							p(class="str-contact")
+								|contact ...
 						.l-mid-2
-							p
-								|Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud ercitation ullamco laboris nisi ut aliquip ex 
+							p(class="str-references")
+								|Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut
+							p(class="str-about")
+								|Sit voluptatem accusantium doloremque laudantium, totam rem 
+							p(class="str-contact")
+								|Fugiat nulla pariatur! Ut enim ad minim veniam, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum 
 						.l-mid-3
 							p
 								|Looking for other services?
@@ -74,7 +47,7 @@ body
 								| BOT Lorem ipsum dolor sit amet, aliquip ex
 
 			.col-lg-8.col-md-8.right-col
-				.row.align-items-center.row-flex
+				.row.align-items-center.row-100vh
 					ul
 						li
 							| editoriale<br> and writing 
@@ -89,7 +62,6 @@ body
 							| digital<br> production 
 							img(src="../img/pointer.png" class="pointer animated")
 			
-
 
 
 		script(src="../scripts.min.js")
