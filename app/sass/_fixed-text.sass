@@ -1,0 +1,25 @@
+.fixed-text	
+	position: fixed	
+	height: 300px
+	color: rgba(237, 35, 64, 0.35)	
+	right: -180px
+	bottom: 325px	
+	text-align: center
+	font-size: 12em	
+	transform: rotate(-90deg)
+	white-space: nowrap
+	text-transform: uppercase
+	font-weight: 900
+	z-index: 1
+	.text
+		position: absolute
+		top: 0
+		color: $accent-color
+
+.active-1
+	&::after
+		content: "what we`re good at..."
+		
+.active-2
+	&::after
+		content: "close"
