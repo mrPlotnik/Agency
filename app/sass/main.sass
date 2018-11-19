@@ -77,40 +77,99 @@ a
 	.left-col, .right-col		
 		background-size: cover
 		height: 100vh	
-		ul
-			width: 100%				
-			li
-				list-style-type: none
-				font-size: 1.7em
+
+.main
+	background-image: url(../img/bg_main.jpg)
+	height: 100vh
+	div
+		position: fixed
+		text-align: center
+		width: 100%
+		&:nth-child(1)	
+			top: 30vh
+			h1
+				color: rgba(237, 35, 64, 0.75);
+				font-size: 15em
 				font-weight: 900
-				line-height: 1
-				text-transform: uppercase
-				padding: 30px 100px	30px 25px		
-				border-bottom: 2px solid rgba(0, 0, 0, 0)
-				+mt(.5s)		
-				&:hover
-					border-bottom: 2px solid $accent-color
-					box-sizing: border-box
+
+		&:nth-child(2)	
+			top: 10vh
+			h2
+				color: rgba(237, 35, 64, 0.25);
+				font-size: 32em
+				font-weight: 900
+		&:nth-child(3)	
+			top: 55vh
+			left: 15vh
+			p
+				color: #fff
+				font-size: 2em
+				font-weight: 300
+.right-col-offer
+	ul
+		width: 100%				
+		li
+			list-style-type: none
+			font-size: 1.7em
+			font-weight: 900
+			line-height: 1
+			text-transform: uppercase
+			padding: 30px 100px	30px 25px		
+			border-bottom: 2px solid rgba(0, 0, 0, 0)
+			+mt(.5s)		
+			&:hover
+				border-bottom: 2px solid $accent-color
+				box-sizing: border-box
+				color: $accent-color
+				background: rgba(31, 35, 53, 0.65)
+				background: linear-gradient(to top, rgba(31, 35, 53, 0.6509803921568628), rgba(237, 35, 64, 0))
+			.pointer	
+				float: right
+
+.right-col-social
+	.pro
+		width: 65%
+		margin: 5px 30px
+		.tweet			
+			padding: 30px 		
+			margin-bottom: 7px
+			font-size: 1em
+			background-color: rgba(32, 35, 54, 0.85)
+			border-bottom: 2px solid rgba(0, 0, 0, 0)
+			+mt(.5s)		
+			&:hover
+				background-color: rgba(32, 35, 54, 0.7)
+				border-bottom: 2px solid $accent-color
+			.row>div				
+				&:nth-child(1)				
 					color: $accent-color
-					background: rgba(31, 35, 53, 0.65)
-					background: linear-gradient(to top, rgba(31, 35, 53, 0.6509803921568628), rgba(237, 35, 64, 0))
-				.pointer	
+					font-weight: 600
+					text-transform: uppercase
+					font-style: italic
+					float: left
+				&:nth-child(2) 				
+					font-size: .7em
+					font-weight: 600
+					font-style: italic
+					text-align: right
 					float: right
-
-.left-col-references				
-	background-image: url(../img/bg_main_left.jpg)		
-.left-col-social		
-	background-image: url(../img/bg_main_left_social.jpg)	
-
-
-		
-.right-col-references				
-	background-image: url(../img/bg_main_right.jpg)				
-
-
-					
-		
-
+				&:nth-child(3) 				
+					font-size: 1em	
 				
+			
+			
+			
+
+.left-col-offer				
+	background-image: url(../img/bg_main_left_offer.jpg)		
+.left-col-social		
+	background-image: url(../img/bg_main_left_social.jpg) 
+.left-col-contact	
+	background-image: url(../img/bg_main_left_contact.jpg)	
 
 
+
+.right-col-offer				
+	background-image: url(../img/bg_main_right_offer.jpg)			
+.right-col-social				
+	background-image: url(../img/bg_main_right_social.jpg)
