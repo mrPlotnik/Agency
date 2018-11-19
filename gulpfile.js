@@ -21,7 +21,13 @@ gulp.task('sass', function () {
 });
 
 gulp.task('pug', function () {
-	return gulp.src("app/pug/index.pug")
+	return gulp.src([
+		"app/pug/index.pug",
+		"app/pug/page/offer.pug",
+		"app/pug/page/social.pug",
+		"app/pug/page/main.pug",
+		
+	])
 	.pipe(pug({pretty: true}))
 	.pipe(gulp.dest('app/'))
 	
