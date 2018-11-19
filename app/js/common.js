@@ -46,24 +46,34 @@ $(document).ready(function() {
 
 
 	// УРОВНИ САЙТА
-	$(".str-about").hide();
+	$(".str-social").hide();
 	$(".str-contact").hide();
 
 	$("#references").click(function() {
-		$(".str-contact").hide();
-		$(".str-about").hide();
-		$(".str-references").fadeIn(900);
+		if ($(".str-social").is(":visible")) {
+			$(".str-contact").hide();
+			$(".str-social").hide();
+			$(".str-references").fadeIn(900);
+			$(".left-col").hide().removeClass("left-col-social")
+			$(".left-col").fadeIn(900).addClass("left-col-references");
+		
+		};	
 	});
 
-	$("#about").click(function() {
-		$(".str-references").hide();
-		$(".str-contact").hide();
-		$(".str-about").fadeIn(900);
+	$("#social").click(function() {
+		if ($(".str-references").is(":visible")) {
+			$(".str-references").hide();
+			$(".str-contact").hide();
+			$(".str-social").fadeIn(900);
+			$(".left-col").hide().removeClass("left-col-references")
+			$(".left-col").fadeIn(900).addClass("left-col-social");
+			
+		};	
 	});	
 
 	$("#contact").click(function() {
 		$(".str-references").hide();
-		$(".str-about").hide();
+		$(".str-social").hide();
 		$(".str-contact").fadeIn(900);
 	});
 

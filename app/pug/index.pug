@@ -9,44 +9,43 @@ body
 	header.main-head.container-fluid
 
 		include menu.pug
+		
+		.logo
+			a(href="#")
+				img(src="../img/logo.jpg" class="img")
+
+		.other-services
+			p
+				|Looking for other services?
+			p
+				a(href="#") find it here
+				img(src="../img/pointer.png", alt="")
 
 		.fixed-text
 			| agency
 			.text.active-1
-
+		
 		.row
-			.col-lg-4.col-md-4.left-col
-
+			.col-lg-4.col-md-4.left-col.left-col-references
 				.row
 					.container.l-wrap
-						.l-logo
-							a(href="#")
-								img(src="../img/logo.jpg" class="img")
+						.l-top
 						.l-mid-1
 							p(class="str-references")
 								|what we're good at ...
-							p(class="str-about")
-								|about ...
+							p(class="str-social")
+								|social ...
 							p(class="str-contact")
 								|contact ...
 						.l-mid-2
 							p(class="str-references")
 								|Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut
-							p(class="str-about")
+							p(class="str-social")
 								|Sit voluptatem accusantium doloremque laudantium, totam rem 
 							p(class="str-contact")
 								|Fugiat nulla pariatur! Ut enim ad minim veniam, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum 
-						.l-mid-3
-							p
-								|Looking for other services?
-							p
-								a(href="#") find it here
-								img(src="../img/pointer.png", alt="")
-						.l-bot
-							p
-								| BOT Lorem ipsum dolor sit amet, aliquip ex
 
-			.col-lg-8.col-md-8.right-col
+			.col-lg-8.col-md-8.right-col.right-col-references
 				.row.align-items-center.row-100vh
 					ul
 						li

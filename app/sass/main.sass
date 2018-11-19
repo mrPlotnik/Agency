@@ -19,17 +19,30 @@ a
 	&:hover
 		color: $accent-color	
 
-.l-logo
-	width: 100%
-	height: 20vh		
+.logo, .other-services
+	position: fixed
+	left: 85px
+	z-index: 1 
 
+.logo	
+	left: 80px	
 	.img
-		width: 100px					
+		width: 100px		
+
+.other-services	
+	bottom: 50px
+	p
+		margin: 0
+	img
+		width: 6px	
+		margin-left: 6px		
 
 .l-wrap
 	width: 60%	
 	text-align: left
-			
+
+.l-top
+	height: 20vh			
 .l-mid-1 
 	width: 100%
 	height: 40vh
@@ -41,7 +54,7 @@ a
 	height: 15vh
 	font-size: .9em
 	font-weight: 600
-.l-mid-3, .r-mid-3
+.r-mid-3
 	height: 10vh
 	font-size: .8em		
 	p
@@ -53,23 +66,17 @@ a
 			width: 6px
 			padding-bottom: 2px	
 			margin-left: 5px
-.l-bot, .r-bot		
+.r-bot		
 	height: 15vh
 					
 
 .main-head
-	height: 100vh
-	// overflow: hidden
+	height: 100vh	
 	.row-100vh	
-		height: 100vh					
-	.left-col				
-		background-image: url(../img/bg_main_left.jpg)
-		background-size: cover	
-		text-align: center
-	.right-col				
-		background-image: url(../img/bg_main_right.jpg)
-		background-size: cover
 		height: 100vh
+	.left-col, .right-col		
+		background-size: cover
+		height: 100vh	
 		ul
 			width: 100%				
 			li
@@ -86,9 +93,19 @@ a
 					box-sizing: border-box
 					color: $accent-color
 					background: rgba(31, 35, 53, 0.65)
-					background: linear-gradient(to top, #1f2335a6, #ed234000)
+					background: linear-gradient(to top, rgba(31, 35, 53, 0.6509803921568628), rgba(237, 35, 64, 0))
 				.pointer	
 					float: right
+
+.left-col-references				
+	background-image: url(../img/bg_main_left.jpg)		
+.left-col-social		
+	background-image: url(../img/bg_main_left_social.jpg)	
+
+
+		
+.right-col-references				
+	background-image: url(../img/bg_main_right.jpg)				
 
 
 					
