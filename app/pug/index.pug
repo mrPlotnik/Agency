@@ -8,7 +8,7 @@ head
 body
 	header.main-head.container-fluid
 
-		include menu.pug
+		include includes/menu.pug
 		
 		.logo
 			a(href="#")
@@ -24,43 +24,18 @@ body
 		.fixed-text
 			| agency
 			.text.active-1
-		
-		.row
-			.col-lg-4.col-md-4.left-col.left-col-references
-				.row
-					.container.l-wrap
-						.l-top
-						.l-mid-1
-							p(class="str-references")
-								|what we're good at ...
-							p(class="str-social")
-								|social ...
-							p(class="str-contact")
-								|contact ...
-						.l-mid-2
-							p(class="str-references")
-								|Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut
-							p(class="str-social")
-								|Sit voluptatem accusantium doloremque laudantium, totam rem 
-							p(class="str-contact")
-								|Fugiat nulla pariatur! Ut enim ad minim veniam, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum 
 
-			.col-lg-8.col-md-8.right-col.right-col-references
-				.row.align-items-center.row-100vh
-					ul
-						li
-							| editoriale<br> and writing 
-							img(src="../img/pointer.png" class="pointer animated")
-						li
-							| powerpoint<br> and animation 
-							img(src="../img/pointer.png" class="pointer animated")
-						li
-							| audio and video<br> production 
-							img(src="../img/pointer.png" class="pointer animated")
-						li
-							| digital<br> production 
-							img(src="../img/pointer.png" class="pointer animated")
-			
+		//- .main
+		//- 	div
+		//- 		h1
+		//- 			| Agency
+		//- 	div
+		//- 		h1
+		//- 			| Agency
+		//- 	div
+		//- 		p
+		//- 			| your ideas in a different way!
 
+		.row.content
 
 		script(src="../scripts.min.js")
