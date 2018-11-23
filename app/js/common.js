@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
-	
-	function pro() {
+// Всплывающие треугольники при наведении
+	function liHover() {
 		$(".right-col ul li img").hide();
 
 		$(".right-col ul li").hover(
@@ -41,18 +41,11 @@ $(document).ready(function() {
 		};
 	});
 
-	function heightDetect() {
-		var height = $("html").height();
-		$(".fixed-text").css("width", height);
-	};
-
-	heightDetect();
 
 
-	// УРОВНИ САЙТА	
-
-	$(document).ready(function() {
-		
+	// СТРАНИЦЫ САЙТА	
+	// При загрузке
+	$(document).ready(function() {		
 		function show() {
 			$.ajax({
 				url: "../main.html",
@@ -62,29 +55,11 @@ $(document).ready(function() {
 				}
 			});
 		}
-		show();
-		
-	
+		show();	
 	});
 
-	$("#social").click(function() {
-		
-		function show() {
-			$.ajax({
-				url: "../social.html",
-				cache: false,
-				success: function(html) {
-					$(".content").html(html);
-				}
-			});
-		}
-		show();
-		
-	
-	});
-
-	$("#offer").click(function() {
-		
+	// При клике по ссылке OFFER 
+	$("#offer").click(function() {		
 		function show() {
 			$.ajax({
 				url: "../offer.html",
@@ -93,16 +68,52 @@ $(document).ready(function() {
 					$(".content").html(html);
 				}
 			}).done(function() { // Если успешно
-				pro();
+				liHover();
+				heightDetect();
 			});
 		}
-		show();
-
-			
+		show();		
 	});	
+
+	// При клике по ссылке SOCIAL 
+	$("#social").click(function() {		
+		function show() {
+			$.ajax({
+				url: "../social.html",
+				cache: false,
+				success: function(html) {
+					$(".content").html(html);
+				}
+			}).done(function() { // Если успешно				
+				heightDetect();
+			});
+		}
+		show();	
+	});
+
+	// При клике по ссылке CONTACT
+	$("#contact").click(function() {		
+		function show() {
+			$.ajax({
+				url: "../contact.html",
+				cache: false,
+				success: function(html) {
+					$(".content").html(html);
+				}
+			}).done(function() { // Если успешно				
+				heightDetect();
+			});
+		}
+		show();			
+	});		
+
+	// Ширина фикстрованного текста равна высоте документа
+	function heightDetect() {
+		var height = $("html").height();
+		$(".fixed-text").css("width", height);
+	};
 
 	
 
 });  	
 		
-
