@@ -26,6 +26,7 @@ gulp.task('pug', function () {
 		"app/pug/page/offer.pug",
 		"app/pug/page/social.pug",
 		"app/pug/page/main.pug",
+		"app/pug/page/contact.pug",
 		
 	])
 	.pipe(pug({pretty: true}))
