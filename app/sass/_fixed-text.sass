@@ -3,7 +3,7 @@
 	height: 300px
 	color: rgba(237, 35, 64, 0.35)	
 	right: -180px
-	bottom: 325px	
+	bottom: 325px		
 	text-align: center
 	font-size: 12em	
 	transform: rotate(-90deg)
@@ -13,13 +13,18 @@
 	z-index: 1
 	.text
 		position: absolute
+		width: 100%
 		top: 0
 		color: $accent-color
 
-.active-1
+.active-offer-page
 	&::after
 		content: "what we`re good at..."
 		
-.active-2
+.active-social-page	
 	&::after
-		content: "close"
+		content: "social"
+
+.active-contact-page	
+	&::after
+		content: "contact"		
