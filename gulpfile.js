@@ -1,25 +1,48 @@
-var gulp 					= require('gulp'),
-		sass 					= require('gulp-sass'),
+var 
+		// Gulp
+		gulp 					= require('gulp'),
+		// Gulp plugins		
 		pug 					= require('gulp-pug'),
-		browserSync 	= require('browser-sync'),
+
+		sass 					= require('gulp-sass'),	
+		autoprefixer 	= require('gulp-autoprefixer'),
+		compressCSS		= require('gulp-csso'),
+		rename 				= require('gulp-rename'),		
+		
 		concat				= require('gulp-concat'),
 		uglify				= require('gulp-uglifyjs'),
 
+		imagemin 			= require('gulp-imagemin'),
+		cache         = require('gulp-cache'),
 		filesize			= require('gulp-size'),
-		compressCSS		= require('gulp-csso');
-		
+		del           = require('del'),		
 
+		browserSync 	= require('browser-sync'),
+		ftp 					= require('vinyl-ftp');
+		
+//------------------------------------------
+// Компилируем SASS в CSS
+// 1. Читаемый вариант
+// 2. Переименовываем, добавляем префиксы,
+// минифицируем
+//------------------------------------------
 gulp.task('sass', function () {
 	return gulp.src("app/sass/**/*.sass")
 	.pipe(sass({     
 			// outputStyle: 'expand',
       includePaths: require('node-bourbon').includePaths
     }).on('error', sass.logError))
+	.pipe(autoprefixer(['last 15 versions']))
+	.pipe(compressCSS())
+	.pipe(rename({suffix: '.min', prefix : ''}))
 	.pipe(gulp.dest('app/css'))
-	
+	.pipe(filesize())		
 	.pipe(browserSync.reload({stream: true}))
 });
 
+//-------------------------------------------
+// Компилируем Pug в HTML
+//-------------------------------------------
 gulp.task('pug', function () {
 	return gulp.src([
 		"app/pug/index.pug",
@@ -35,6 +58,9 @@ gulp.task('pug', function () {
 	.pipe(browserSync.reload({stream: true}))
 });	
 
+//--------------------------------------------
+// Минимизируем наш common.js 
+//--------------------------------------------
 gulp.task('js', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
@@ -42,8 +68,7 @@ gulp.task('js', function() {
 	])
 	.pipe(concat('scripts.min.js'))
 	.pipe(uglify())
-	.pipe(gulp.dest('app/'))
-	
+	.pipe(gulp.dest('app/js/'))	
 	.pipe(browserSync.reload({stream: true}));
 });
 
@@ -56,10 +81,79 @@ gulp.task('browser-sync', function() {
 	});
 });
 
-gulp.task('watch', ['sass', 'pug', 'browser-sync'], function() {
+//----------------------------------------------
+// Оптимизация, минификация изображений
+//----------------------------------------------
+gulp.task('imagemin', () =>
+	gulp.src('app/img/**/*')	
+		.pipe(cache(imagemin()) // Cache Images
+		.pipe(gulp.dest('dist/img/'))
+));
+
+//----------------------------------------------
+// Очистка директории
+//----------------------------------------------
+gulp.task('removedist', function() {
+	return del.sync('dist'); 
+});
+
+//----------------------------------------------
+// Сборка проекта
+//----------------------------------------------
+gulp.task('build', ['removedist', 'imagemin', 'pug', 'sass', 'js'], function() {
+
+	var buildFiles = gulp.src([
+		'app/*.html',		
+		]).pipe(gulp.dest('dist'));
+
+	var buildCss = gulp.src([
+		'app/css/main.min.css',
+		]).pipe(gulp.dest('dist/css'));
+
+	var buildJs = gulp.src([
+		'app/js/scripts.min.js',
+		]).pipe(gulp.dest('dist/js'));
+
+	// var buildFonts = gulp.src([
+	// 	'app/fonts/**/*',
+	// 	]).pipe(gulp.dest('dist/fonts'));
+
+});
+
+//---------------------------------------------
+// Vynil-FTP. Деплой на сервер
+//---------------------------------------------
+gulp.task( 'deploy', function () {
+
+	var conn = ftp.create( {
+		host:     'files.000webhost.com',
+		port:     '21',
+		user:     'plotnik-webdev',
+		password: '',
+		parallel: 1,
+    maxConnections:1,
+		// log:      gutil.log
+	} );
+
+	var globs = [
+		'dist/**'
+	];
+
+	return gulp.src( globs, { base: '.', buffer: false } )
+		.pipe( conn.newer( 'public_html/' ) ) // only upload newer files
+		.pipe( conn.dest( 'public_html/' ) );
+} );      
+
+//----------------------------------------------
+// Наблюдаем за изменениями, компилируем, перезагружаем
+//----------------------------------------------
+gulp.task('watch', ['sass', 'pug', 'js', 'browser-sync'], function() {
 	gulp.watch('app/sass/**/*.sass', ['sass']);
 	gulp.watch('app/pug/**/*.pug', ['pug']);
 	gulp.watch('app/js/**/*.js', ['js']);
 });
 
-gulp.task('default', ['watch']);
+//----------------------------------------------
+// По умолчанию (при запуске)
+//----------------------------------------------
+gulp.task('default', ['imagemin', 'watch']);
