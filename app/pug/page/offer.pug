@@ -1,11 +1,9 @@
-.row.fadeIn.animated
-	.other-services
-		p
-			|Looking for other services?
-		p
-			a(href="#") find it here
-			img(src="../img/pointer.png", alt="")
+.loader
+	.loader-in
+		| Loading
+		span
 
+.row.fadeIn.animated
 	.fixed-text
 		| agency
 		.text.active-offer-page
@@ -15,11 +13,15 @@
 			.container.l-wrap
 				.l-top
 				.l-mid-1
-					p(class="offer")
-						|what we're good at ...
+					p what we're good at ...
 				.l-mid-2
-					p(class="offer")
-						|Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut
+					p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut
+				
+				.other-services
+					p Looking for other services?
+					p
+						a(href="#") find it here
+						img(src="../img/pointer.png", alt="")
 	.col-lg-8.col-md-8.right-col.right-col-offer
 		.row.align-items-center.row-100vh
 			ul
