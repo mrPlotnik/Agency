@@ -1,26 +1,28 @@
-<!DOCTYPE html>
+doctype html
 html(lang="en")
-head
-	meta(charset="UTF-8")
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">	
-	link(rel="stylesheet", href="css/main.min.css")
-	title Agency
-body
+	head
+		meta(charset="UTF-8")
+		meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+		//- <meta name="viewport" content="width=device-width,initial-scale=1">	
 
-	.loader
-		.loader-in
-			| Loading
-			span
+		link(rel="stylesheet", href="css/main.min.css")
+		title Agency
+	body
 
-	header.main-head.container-fluid
+		.loader
+			.loader-in
+				| Loading
+				span
 
-		include includes/menu.pug
-		
-		.logo
-			a(href="#")
-				img(src="img/logo.jpg" class="img")
+		header.main-head.container-fluid
+
+			include includes/menu.pug
+			
+			.logo
+				a(href="#")
+					img(src="img/logo.jpg" class="img")
 
 
-		.content
+			.content
 
-		script(src="js/scripts.min.js")
+			script(src="js/scripts.min.js")

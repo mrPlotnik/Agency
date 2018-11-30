@@ -29,11 +29,11 @@ var
 gulp.task('sass', function () {
 	return gulp.src("app/sass/**/*.sass")
 	.pipe(sass({     
-			// outputStyle: 'expand',
+			outputStyle: 'expand',
       includePaths: require('node-bourbon').includePaths
     }).on('error', sass.logError))
 	.pipe(autoprefixer(['last 15 versions']))
-	.pipe(compressCSS())
+	// .pipe(compressCSS())
 	.pipe(rename({suffix: '.min', prefix : ''}))
 	.pipe(gulp.dest('app/css'))
 	.pipe(filesize())		
@@ -49,12 +49,10 @@ gulp.task('pug', function () {
 		"app/pug/page/offer.pug",
 		"app/pug/page/social.pug",
 		"app/pug/page/main.pug",
-		"app/pug/page/contact.pug",
-		
+		"app/pug/page/contact.pug",		
 	])
 	.pipe(pug({pretty: true}))
-	.pipe(gulp.dest('app/'))
-	
+	.pipe(gulp.dest('app/'))	
 	.pipe(browserSync.reload({stream: true}))
 });	
 
@@ -150,7 +148,7 @@ gulp.task( 'deploy', function () {
 gulp.task('watch', ['sass', 'pug', 'js', 'browser-sync'], function() {
 	gulp.watch('app/sass/**/*.sass', ['sass']);
 	gulp.watch('app/pug/**/*.pug', ['pug']);
-	gulp.watch('app/js/**/*.js', ['js']);
+	gulp.watch('app/js/common.js', ['js']);
 });
 
 //----------------------------------------------
