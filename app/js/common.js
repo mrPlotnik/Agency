@@ -1,6 +1,15 @@
-$(document).ready(function() {
+$(document).ready(function() {	
 
-// Всплывающие треугольники при наведении
+	load();
+		
+	// Прелоадер
+	function load() {
+		$(".loader_in").fadeOut();
+		$(".loader").fadeOut("slow");	
+	};
+	
+
+	// Всплывающие треугольники при наведении
 	function liHover() {
 		$(".right-col ul li img").hide();
 
@@ -21,11 +30,14 @@ $(document).ready(function() {
 	$(".toggle_mnu").toggleClass("not-active");	
 
 	$(".toggle_mnu").click(function() {
-		$(this).toggleClass("active");		
+		$(this).toggleClass("active");	
+		$(this).toggleClass("not-active");	
 	});
 
-	$(".top_m a").click(function() {
+	$(".top_mnu a").click(function() {
 		$(".top_mnu").fadeOut(600);		
+		$(".toggle_mnu").toggleClass("active");
+		$(".toggle_mnu").toggleClass("not-active");
 	});
 
 	$(".toggle_mnu").click(function() {
@@ -48,7 +60,7 @@ $(document).ready(function() {
 	$(document).ready(function() {		
 		function show() {
 			$.ajax({
-				url: "../main.html",
+				url: "main.html",
 				cache: false,
 				success: function(html) {
 					$(".content").html(html);
@@ -62,7 +74,7 @@ $(document).ready(function() {
 	$("#offer").click(function() {		
 		function show() {
 			$.ajax({
-				url: "../offer.html",
+				url: "offer.html",
 				cache: false,
 				success: function(html) {
 					$(".content").html(html);
@@ -70,6 +82,7 @@ $(document).ready(function() {
 			}).done(function() { // Если успешно
 				liHover();
 				heightDetect();
+				load();
 			});
 		}
 		show();		
@@ -86,6 +99,7 @@ $(document).ready(function() {
 				}
 			}).done(function() { // Если успешно				
 				heightDetect();
+				load();
 			});
 		}
 		show();	
@@ -102,6 +116,7 @@ $(document).ready(function() {
 				}
 			}).done(function() { // Если успешно				
 				heightDetect();
+				load();
 			});
 		}
 		show();			
