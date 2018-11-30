@@ -1,78 +1,70 @@
 @import "color"
 @import "libs"
 @import "vars"
+@import "loader"
 @import "fixed-text"
 @import "mnu"
+
+
+
 	
 *
 	text-decoration: none !important		
+	margin: 0 
+	padding: 0
+	user-select: none
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	&:active, &:focus
+		outline: none
+
+
+
 
 body	
 	background-color: $bg_color
 	color: $text-color
 	font-size: 16px
 	font-family: Arial, sans-serif
-
-a, input
-	outline: none	
-
+	 
+// -----------------------------
 a	
 	color: #fff
-	+mt(.5s)
-	&:hover
-		color: $accent-color		
+	+mt(.3s)
+	
 
+	&:hover
+		color: $accent-color !important	
+
+.loader-page		
+	z-index: -1		
+
+.point	
+	width: 5px	
+	margin-left: 15px	
+
+// -----------------------------
 .logo, .other-services
-	position: fixed
-	left: 85px
+	position: fixed	
 	z-index: 1 
 
 .logo	
-	left: 80px	
+	left: 85px	
 	.img
 		width: 100px		
 
 .other-services	
 	bottom: 50px
 	p
-		margin: 0
-	img
-		width: 6px	
-		margin-left: 6px		
-
-.l-wrap
-	width: 60%	
-	text-align: left
-
-.l-top
-	height: 20vh			
-.l-mid-1 
-	width: 100%
-	height: 40vh
-	font-weight: 900	
-	color: $accent-color
-	text-transform: uppercase			
-.l-mid-2, .r-mid-2	
-	margin: 0 auto
-	height: 15vh
-	font-size: .9em
-	font-weight: 600
-.r-mid-3
-	height: 10vh
-	font-size: .8em		
-	p
-		margin-bottom: 5px
+		margin-bottom: 10px		
+		font-size: 0.8em			
 		&:nth-child(2)	
-			text-transform: uppercase
-			font-weight: 600	
-		img
-			width: 6px
-			padding-bottom: 2px	
-			margin-left: 5px
-.r-bot		
-	height: 15vh
-					
+			text-transform: uppercase	
+			font-weight: 600			
+		
 
+//////////////////////////////////////		
+// Основная разметка
+//////////////////////////////////////
 .main-head
 	height: 100vh	
 	.row-100vh	
@@ -81,7 +73,34 @@ a
 		background-size: cover
 		height: 100vh	
 
+//////////////////////////////////////		
+// Левая часть
+//////////////////////////////////////	
+.l-wrap
+	width: 60%	
+	text-align: left
+
+.l-top
+	height: 20vh		
+
+.l-mid-1 
+	width: 100%
+	height: 40vh
+	padding-bottom: 10px
+	font-weight: 900	
+	color: $accent-color
+	text-transform: uppercase			
+
+.l-mid-2	
+	margin: 0 auto
+	height: 15vh
+	font-size: .9em
+	line-height: 1.5em
+	font-weight: 600					
+
+//////////////////////////////////////	
 // Стартовая страница
+//////////////////////////////////////	
 .main
 	background-image: url(../img/bg_main.jpg)
 	height: 100vh
@@ -89,6 +108,7 @@ a
 		position: fixed
 		text-align: center
 		width: 100%
+		left: 0
 		&:nth-child(1)	
 			top: 30vh
 			h1
@@ -97,13 +117,13 @@ a
 				font-weight: 900
 
 		&:nth-child(2)	
-			top: 10vh
+			top: 5vh
 			h2
 				color: rgba(237, 35, 64, 0.25);
 				font-size: 32em
 				font-weight: 900
 		&:nth-child(3)	
-			top: 55vh
+			top: 60vh
 			left: 15vh
 			p
 				color: #fff
@@ -164,67 +184,75 @@ a
 				font-size: 1em	
 
 .right-col-contact	
-	.item			
-		padding: 20px 	
-		font-size: 1em			
+	.item	
+		padding: 20px
+		font-size: 1em
 		p
 			font-style: italic	
 			font-weight: 600			
 			&:nth-child(1)				
 				color: $accent-color				
-				text-transform: uppercase							
-			&:nth-child(2) 				
-				font-size: .8em					
-		&:nth-child(4) 		
-			font-size: 1.2em	
+				text-transform: uppercase	
+				margin-bottom: 10px
+			&:nth-child(2) 
+				font-size: .8em	
+				line-height: 1.5em
+		&:nth-child(4) 
+			// font-size: 1.2em	
 			margin-top: 15px
 			.group
 				position: relative	
 				width: 300px
-				float: left				
 				input
 					width: 100%
 					height: 45px 
-					border: 1px solid $bg-color-2 				
+					margin-top: 20px
+					border: 1px solid $bg-color-2 
 					background: $bg-color-2 !important
-					padding: 10px 20px				
+					padding: 10px 20px	
 					font-size: .7em 
 					color: #fff
 					+mt(.5s)
 					&:hover, &:focus				
 						border-bottom: 1px solid $accent-color 				
-					&:focus ~ label, &:valid ~ label						
-						top: -20px
-						font-size: .6em
+					&:focus ~ label, &:valid ~ label
+						top: 5px						
 						color: $accent-color
 						+mt(.3s)	
 				label					
-					font-size: 16px
+					font-size: .8em
 					font-weight: normal
 					position: absolute
 					pointer-events: none
-					left: 5px
-					top: 10px	
-	.btn 
-		height: 45px
-		background: $accent-color
+					left: 15px
+					top: 35px	
+	
+	.send
+		height: 45px		
 		color: #fff
 		border: none;
-		padding: 5px						
-		&:hover				
-			background: lighten($accent-color, 10%)
+		border-radius: unset
+		padding-top: 10px					
+		font-weight: 600
+		background-color: unset
+		text-transform: uppercase
+		&:focus
+			box-shadow: none	
+		
 				
 				
 .left-col-offer				
-	background-image: url(../img/bg_main_left_offer.jpg)		
+	background-image: url(../img/bg_main_left_offer.jpg)	
 .left-col-social		
 	background-image: url(../img/bg_main_left_social.jpg) 
 .left-col-contact	
-	background-image: url(../img/bg_main_left_contact.jpg)	
+	background-image: url(../img/bg_main_left_contact.jpg)
 
 .right-col-offer				
-	background-image: url(../img/bg_main_right_offer.jpg)		
+	background-image: url(../img/bg_main_right_offer.jpg)	
 .right-col-social				
 	background-image: url(../img/bg_main_right_social.jpg)
 .right-col-contact			
 	background-image: url(../img/bg_main_right_contact.jpg)
+
+@import "media"
