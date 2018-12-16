@@ -1,6 +1,6 @@
 $(document).ready(function() {	
 
-	load();
+	// load();
 		
 	// Прелоадер
 	function load() {
@@ -23,9 +23,6 @@ $(document).ready(function() {
 		);
 	};
 	
-
-
-
 
 	$(".toggle_mnu").toggleClass("not-active");	
 
@@ -56,78 +53,98 @@ $(document).ready(function() {
 
 
 	// СТРАНИЦЫ САЙТА	
-	// При загрузке
-	$(document).ready(function() {		
-		function show() {
-			$.ajax({
-				url: "main.html",
-				cache: false,
-				success: function(html) {
-					$(".content").html(html);
-				}
-			});
-		}
-		show();	
-	});
+		// При загрузке
+		$(document).ready(function() {		
+			function show() {
+				$.ajax({
+					url: "main.html",
+					cache: false,
+					success: function(html) {
+						$(".content").html(html);
+					}
+				});
+			}
+			show();	
+		});
 
-	// При клике по ссылке OFFER 
-	$("#offer").click(function() {		
-		function show() {
-			$.ajax({
-				url: "offer.html",
-				cache: false,
-				success: function(html) {
-					$(".content").html(html);
-				}
-			}).done(function() { // Если успешно
-				liHover();
-				heightDetect();
-				load();
-			});
-		}
-		show();		
-	});	
+		// При клике по LOGO
+		$("#logo").click(function() {		
+			function show() {
+				$.ajax({
+					url: "main.html",
+					cache: false,
+					success: function(html) {
+						$(".content").html(html);
+					}
+				}).done(function() { // Если успешно							
+				});
+			}
+			show();		
+		});	
 
-	// При клике по ссылке SOCIAL 
-	$("#social").click(function() {		
-		function show() {
-			$.ajax({
-				url: "../social.html",
-				cache: false,
-				success: function(html) {
-					$(".content").html(html);
-				}
-			}).done(function() { // Если успешно				
-				heightDetect();
-				load();
-			});
-		}
-		show();	
-	});
+		// При клике по ссылке OFFER 
+		$("#offer").click(function() {		
+			function show() {
+				$.ajax({
+					url: "offer.html",
+					cache: false,
+					success: function(html) {
+						$(".content").html(html);
+					}
+				}).done(function() { // Если успешно
+					liHover();
+					heightDetect();
+					load();
+				});
+			}
+			show();		
+		});	
 
-	// При клике по ссылке CONTACT
-	$("#contact").click(function() {		
-		function show() {
-			$.ajax({
-				url: "../contact.html",
-				cache: false,
-				success: function(html) {
-					$(".content").html(html);
-				}
-			}).done(function() { // Если успешно				
-				heightDetect();
-				load();
-			});
-		}
-		show();			
-	});		
+		// При клике по ссылке SOCIAL 
+		$("#social").click(function() {		
+			function show() {
+				$.ajax({
+					url: "../social.html",
+					cache: false,
+					success: function(html) {
+						$(".content").html(html);
+					}
+				}).done(function() { // Если успешно				
+					heightDetect();
+					load();
+				});
+			}
+			show();	
+		});
+
+		// При клике по ссылке CONTACT
+		$("#contact").click(function() {		
+			function show() {
+				$.ajax({
+					url: "../contact.html",
+					cache: false,
+					success: function(html) {
+						$(".content").html(html);
+					}
+				}).done(function() { // Если успешно				
+					heightDetect();
+					load();
+				});
+			}
+			show();			
+		});		
+
 
 	// Ширина фикстрованного текста равна высоте документа
 	function heightDetect() {
-		var height = $("html").height();
-		$(".fixed-text").css("width", height);
+		var bottom = $(".fixed-text").width()/3;
+		console.log(bottom);
+		
+		$(".fixed-text").css("bottom", bottom);		
 	};
 
+	
+		
 	
 
 });  	
