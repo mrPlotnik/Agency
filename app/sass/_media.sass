@@ -1,37 +1,43 @@
-/* Custom, iPhone Retina */
-@media (max-width: 575.98px)
+// /* Custom Media Queries */
+
+@media (max-width: 768px)
 	///////////////////////////////////		
 	// Logo
 	///////////////////////////////////
 	.logo		
-		left: 10px
+		left: 20px
 		.img
-			width: 70px
+			width: 80px
 
 	///////////////////////////////////		
 	// Menu
 	///////////////////////////////////
 	.toggle_mnu		
-		right: 10px		
+		right: 0	
 
 	.top_mnu	
-		width: 100%	
+		max-width: 100%
+		width: 100%
 
 	.r-wrap
-		margin-right: 10px	
+		margin-right: 10px			
 		.r-top		
 			height: 25vh
 		.r-mid-1
-			height: 30vh
+			height: 30vh			
 		.r-mid-2
 			height: 22vh
+			display: none
 		.r-bot
 			height: auto
 			width: 100%
 			position: fixed
 			bottom: 0	
 			right: 10px	
-
+		
+	///////////////////////////////////		
+	// other-services
+	///////////////////////////////////
 	.other-services
 		width: 100% 	
 		bottom: 0
@@ -40,53 +46,33 @@
 		background-color: $bg-color
 		p
 			display: inline-block
-			margin: 0
+			margin: 0	
 
-	
-
-		
-	.l-wrap
-		width: 100%
-		padding: 0 20px 0 20px
-		.l-top
-			height: 15vh
-		.l-mid-1
-			height: auto	
-			font-weight: 600
-		.l-mid-2
-			font-weight: 300	
-
-
+	///////////////////////////////////		
+	// Фиксированный текст
+	///////////////////////////////////
 	.fixed-text
 		display: none
 
+	///////////////////////////////////		
+	// Общая структура
+	///////////////////////////////////	
 	.content
 		.left-col
-			height: auto
-
-		.row-100vh
-			height: auto
-
-		.left-col
-			position: fixed	
-			z-index: 1
-		
+			.l-wrap
+				width: 100%
+				padding: 0 20px 0 20px	
+				margin: 20vh 0	
+				.l-top
+				.l-mid-1
+					height: auto	
+					margin: 15vh 0
+				.l-mid-2
+					font-weight: 300
 		.right-col
-			height: auto
-			padding-bottom: 20px
-			top: 34vh
-			ul				
-				margin: 0 auto
-				margin-top: 30px				
-				li
-					font-size: 1.2em
-					padding: 0 20px 7px 20px
-					margin-bottom: 20px
-					img
-						position: relative
-						bottom: 7px
-
-
+			.r-wrap
+				width: 100%
+				// margin: 30px 20px 40px
 
 	///////////////////////////////////		
 	// Main page
@@ -94,7 +80,7 @@
 	.main		
 		div			
 			&:nth-child(1)	
-				top: 35vh				
+				top: 40vh				
 				h1				
 					font-size: 4em
 			&:nth-child(2)	
@@ -103,7 +89,7 @@
 					font-size: 5em
 					font-weight: 900
 			&:nth-child(3)	
-				top: 50vh				
+				top: 55vh				
 				left: 0
 				p					
 					font-size: .9em
@@ -111,29 +97,147 @@
 
 	///////////////////////////////////		
 	// Offers page
-	///////////////////////////////////	
-	.content
-		.right-col-offer	
-			height: 60vh			
+	///////////////////////////////////
+	.right-col-offer
+		ul				
+			margin: 0 auto						
+			li
+				font-size: 1.2em
+				padding: 0 20px 7px 20px
+				margin-bottom: 20px
+				img
+					position: relative
+					bottom: 7px
 
 	///////////////////////////////////		
 	// Social page
-	///////////////////////////////////	
-	.right-col-social
-		.wrap
-			width: 100%
-			margin: 30px 20px 20px
-			.tweet
-				padding: 20px
-				.row
-					div
-						width: auto
+	///////////////////////////////////
+	.right-col-social		
+		.tweet
+			padding: 20px
+			.row
+				div
+					width: auto						
+
+	///////////////////////////////////		
+	// Contact page
+	///////////////////////////////////
+	.right-col-contact
+		.r-wrap			
+			.item
+				padding: 0 0 20px
+				.group
+					width: 100%		
 					
+	
+
+/* Custom, iPhone Retina */
+@media (max-width: 575.98px) 
+	///////////////////////////////////		
+	// Общая структура
+	///////////////////////////////////	
+	.content
+		.left-col		
+			z-index: 1
+			height: 35vh
+			position: fixed	
+			.l-wrap
+				margin: 100px 0 0
+				// font-size: 1em
+				.l-mid-1
+					margin: auto
+				.l-mid-2
+
+		.right-col		
+			min-height: 65vh	
+			height: 	auto	
+			margin-bottom: 30px
+			top: 35vh		
+			.r-wrap
+				margin: 30px 20px 40px
+			
 
 
-						
-@media (min-width: 768px) 
-	// qwe
+@media (max-width: 370px) 
+	///////////////////////////////////		
+	// Общая структура
+	///////////////////////////////////	
+	.content
+		.left-col					
+			.l-wrap
+				margin: 90px 0 0
+				font-size: 0.9em					
 
+@media (max-height : 374px)	
 
+	///////////////////////////////////		
+	// Фиксированный текст
+	///////////////////////////////////	
+	.fixed-text
+		display: none	
 
+	///////////////////////////////////		
+	// Logo
+	///////////////////////////////////
+	.logo		
+		left: 20px
+		.img
+			width: 80px	
+
+	///////////////////////////////////		
+	// Общая структура
+	///////////////////////////////////	
+	.content
+		.left-col
+			height: 35vh
+			position: fixed	
+			z-index: 1
+			.l-wrap
+				width: 70vw	
+				margin: auto
+				.l-top
+					display: none		
+				.l-mid-1, .l-mid-2
+					margin-left: 2vw
+				.l-mid-1
+					margin-top: 5vh			
+					height: auto	
+					font-weight: 600
+				.l-mid-2
+					width: 60vw
+					font-weight: 300
+
+	///////////////////////////////////		
+	// Menu
+	///////////////////////////////////
+	.toggle_mnu		
+		right: 0
+
+	.r-wrap		
+		.r-top		
+			height: 30vh
+		.r-mid-1
+			font-size: 1em			
+		.r-mid-2
+			display: none
+		
+	///////////////////////////////////		
+	// Main page
+	///////////////////////////////////
+	.main		
+		div			
+			&:nth-child(1)	
+				top: 30vh				
+				h1				
+					font-size: 5em
+			&:nth-child(2)	
+				top: 20vh			
+				h2					
+					font-size: 7em
+					font-weight: 900
+			&:nth-child(3)	
+				top: 60vh				
+				left: 0
+				p					
+					font-size: .9em
+					font-weight: 300
