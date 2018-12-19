@@ -1,6 +1,43 @@
-// /* Custom Media Queries */
+// Большие девайсы (большие десктопы, < 1200px)
+@media (max-width: 1199.98px)
+	///////////////////////////////////		
+	// Menu
+	///////////////////////////////////	
+	.top_mnu	
+		max-width: 100%
+		width: 300px
+		font-size: 1em
 
-@media (max-width: 768px)
+	///////////////////////////////////		
+	// Фиксированный текст
+	///////////////////////////////////
+	.fixed-text		
+		right: -235px
+		
+	///////////////////////////////////		
+	// Общая структура
+	///////////////////////////////////	
+	.content	
+		font-size: 1em
+	
+	///////////////////////////////////		
+	// Main page
+	///////////////////////////////////
+	.main		
+		div			
+			top: 25%
+			&:nth-child(1)								
+				h1					
+					line-height: 1.7em
+			&:nth-child(2)							
+				h2
+					font-size: 18em					
+			&:nth-child(3)								
+				left: 100px			
+				line-height: 660px //костыль
+
+// Большие девайсы (десктопы, >= 992px)
+@media (max-width: 991.98px)
 	///////////////////////////////////		
 	// Logo
 	///////////////////////////////////
@@ -17,10 +54,10 @@
 
 	.top_mnu	
 		max-width: 100%
-		width: 100%
+		width: 40vw
 
 	.r-wrap
-		margin-right: 10px			
+		margin-right: 15px			
 		.r-top		
 			height: 25vh
 		.r-mid-1
@@ -29,11 +66,7 @@
 			height: 22vh
 			display: none
 		.r-bot
-			height: auto
-			width: 100%
-			position: fixed
-			bottom: 0	
-			right: 10px	
+			right: 15px						
 		
 	///////////////////////////////////		
 	// other-services
@@ -58,118 +91,121 @@
 	// Общая структура
 	///////////////////////////////////	
 	.content
+		font-size: 1em
 		.left-col
 			.l-wrap
-				width: 100%
 				padding: 0 20px 0 20px	
-				margin: 20vh 0	
+				margin: 120px 0 0
 				.l-top
 				.l-mid-1
 					height: auto	
-					margin: 15vh 0
 				.l-mid-2
 					font-weight: 300
 		.right-col
 			.r-wrap
-				width: 100%
-				// margin: 30px 20px 40px
+				margin: 120px 0 0
 
 	///////////////////////////////////		
 	// Main page
 	///////////////////////////////////
 	.main		
 		div			
-			&:nth-child(1)	
-				top: 40vh				
-				h1				
-					font-size: 4em
-			&:nth-child(2)	
-				top: 35vh			
-				h2					
-					font-size: 5em
-					font-weight: 900
-			&:nth-child(3)	
-				top: 55vh				
-				left: 0
+			top: 25%	
+			&:nth-child(1)								
+				h1									
+					font-size: 7em
+					line-height: 2em
+			&:nth-child(2)							
+				h2										
+					font-size: 9em					
+			&:nth-child(3)								
+				left: 50px				
+				line-height: 340px
 				p					
-					font-size: .9em
-					font-weight: 300
+					font-size: 1em
 
+// Средние девайсы («таблетки», >= 768px)
+@media (max-width: 767.98px)
 	///////////////////////////////////		
-	// Offers page
-	///////////////////////////////////
-	.right-col-offer
-		ul				
-			margin: 0 auto						
-			li
-				font-size: 1.2em
-				padding: 0 20px 7px 20px
-				margin-bottom: 20px
-				img
-					position: relative
-					bottom: 7px
-
+	// Пусто
 	///////////////////////////////////		
-	// Social page
-	///////////////////////////////////
-	.right-col-social		
-		.tweet
-			padding: 20px
-			.row
-				div
-					width: auto						
-
-	///////////////////////////////////		
-	// Contact page
-	///////////////////////////////////
-	.right-col-contact
-		.r-wrap			
-			.item
-				padding: 0 0 20px
-				.group
-					width: 100%		
-					
 	
+// Малые девайсы («ландшафтные телефоны», >= 576px)
+@media (max-width: 575.98px)
+	///////////////////////////////////		
+	// Menu
+	///////////////////////////////////	
+	.top_mnu			
+		width: 100vw			
 
-/* Custom, iPhone Retina */
-@media (max-width: 575.98px) 
 	///////////////////////////////////		
 	// Общая структура
 	///////////////////////////////////	
 	.content
-		.left-col		
-			z-index: 1
+		
+		.left-col			
 			height: 35vh
 			position: fixed	
 			.l-wrap
-				margin: 100px 0 0
-				// font-size: 1em
+				margin: 100px 0 0				
 				.l-mid-1
 					margin: auto
 				.l-mid-2
-
 		.right-col		
 			min-height: 65vh	
 			height: 	auto	
-			margin-bottom: 30px
+			padding-bottom: 40px
 			top: 35vh		
 			.r-wrap
-				margin: 30px 20px 40px
+				font-size: .9em
+				margin: 30px 0 0				
 			
+	///////////////////////////////////		
+	// Main page
+	///////////////////////////////////
+	.main		
+		div		
+			top: 30%	
+			&:nth-child(1)								
+				h1					
+					line-height: 2em					
+					font-size: 4em
+			&:nth-child(2)							
+				h2
+					font-size: 5em				
+			&:nth-child(3)								
+				left: 0				
+				line-height: 190px
+				p					
+					font-size: .9em
 
-
-@media (max-width: 370px) 
+// Custom Media Queries 
+@media (max-width: 370px)
 	///////////////////////////////////		
 	// Общая структура
 	///////////////////////////////////	
 	.content
+		font-size: 0.9em
 		.left-col					
 			.l-wrap
 				margin: 90px 0 0
-				font-size: 0.9em					
+				font-size: 0.9em	
 
-@media (max-height : 374px)	
+	///////////////////////////////////		
+	// Main page
+	///////////////////////////////////
+	.main	
+		p					
+			line-height: 180px				
+	
+	///////////////////////////////////		
+	// Social Page
+	///////////////////////////////////	
+	.right-col-social 
+		.tweet 
+			padding: 20px				
 
+@media (max-height: 374px)
 	///////////////////////////////////		
 	// Фиксированный текст
 	///////////////////////////////////	
@@ -188,10 +224,10 @@
 	// Общая структура
 	///////////////////////////////////	
 	.content
+		font-size: .9em
 		.left-col
 			height: 35vh
-			position: fixed	
-			z-index: 1
+			position: fixed				
 			.l-wrap
 				width: 70vw	
 				margin: auto
@@ -204,7 +240,7 @@
 					height: auto	
 					font-weight: 600
 				.l-mid-2
-					width: 60vw
+					width: 65vw
 					font-weight: 300
 
 	///////////////////////////////////		
@@ -226,18 +262,13 @@
 	///////////////////////////////////
 	.main		
 		div			
-			&:nth-child(1)	
-				top: 30vh				
-				h1				
-					font-size: 5em
-			&:nth-child(2)	
-				top: 20vh			
-				h2					
+			top: 15%	
+			&:nth-child(1)
+				h1
 					font-size: 7em
-					font-weight: 900
-			&:nth-child(3)	
-				top: 60vh				
-				left: 0
-				p					
-					font-size: .9em
-					font-weight: 300
+			&:nth-child(2)
+				h2
+					font-size: 9em
+			&:nth-child(3)
+				left: 10vw
+				line-height: 310px

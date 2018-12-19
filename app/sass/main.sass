@@ -1,52 +1,53 @@
-@import "color"
 @import "libs"
 @import "vars"
 @import "loader"
 @import "fixed-text"
 @import "mnu"
-
-
-
 	
 *
 	text-decoration: none !important		
 	margin: 0 
 	padding: 0
 	user-select: none
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0) // Отключаем цвет подсветки ссылки или любого кликабельного JavaScript элемента при касании
 	&:active, &:focus
 		outline: none
-
-
-
 
 body	
 	background-color: $bg_color
 	color: $text-color
 	font-size: 16px
-	font-family: Arial, sans-serif
-	 
-// -----------------------------
+	font-family: Arial, sans-serif	
+
+//////////////////////////////////////		 
+// Ссылки
+//////////////////////////////////////	
 a	
 	color: #fff
 	+mt(.3s)
-	
-
 	&:hover
 		color: $accent-color !important	
 
+//////////////////////////////////////	
+// Лоадер
+//////////////////////////////////////	
 .loader-page		
 	z-index: -1		
 
-.point	
-	width: 5px	
-	margin-left: 15px	
+//////////////////////////////////////	
+// Стрелочка .other-services, .send
+//////////////////////////////////////	
+.point
+	width: 6px	
+	margin-left: 15px		
 
-// -----------------------------
+//////////////////////////////////////	
+// фиксированные элементы
+//////////////////////////////////////	
 .logo, .other-services
 	position: fixed	
 	z-index: 1 
-
+	
 .logo	
 	left: 85px	
 	.img
@@ -54,40 +55,38 @@ a
 
 .other-services	
 	bottom: 50px
+	left: 80px	
 	p
 		margin-bottom: 10px		
-		font-size: 0.8em			
+		font-size: 0.9em			
 		&:nth-child(2)	
 			text-transform: uppercase	
-			font-weight: 600			
-		
+			font-weight: 600					
 
 //////////////////////////////////////		
-// Основная разметка
+// Фоновые картинки
 //////////////////////////////////////
 .main-head
-	height: 100vh	
-	// .row-100vh	
-	// 	height: 100vh
-	.left-col, .right-col		
+	height: 100vh		
+	.left-col, .right-col, .main
 		background-size: cover
 		height: 100vh	
 
 //////////////////////////////////////		
-// Левая часть
+// Общая структура
 //////////////////////////////////////	
-.content
+.content	
+	font-size: 1.2em
 	.left-col
 		position: fixed	
 		left: 0	
 		justify-content: flex-end
+		z-index: 2
 		.l-wrap
-			margin: 20vh 70px
-			// margin: 100px 0						
-			text-align: left		
-			
-			.l-mid-1 		
-				margin: 15vh 0
+			margin: 150px 70px 0
+			text-align: left
+			.l-mid-1
+				margin: 0 0 8vh
 				padding-bottom: 10px
 				font-weight: 900	
 				color: $accent-color
@@ -95,68 +94,61 @@ a
 			.l-mid-2				
 				font-size: .9em
 				line-height: 1.5em
-				font-weight: 600		
-	
+				font-weight: 600			
 	.right-col	
 		position: absolute
 		right: 0	
 		height: auto
 		min-height: 100vh
+		padding-bottom: 10vh		
 		.r-wrap			
-			margin: 80px 30px	20px
+			margin: 150px 0 0
+			z-index: 1
 			
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //////////////////////////////////////	
-// Стартовая страница
+// Main
 //////////////////////////////////////	
 .main
-	background-image: url(../img/bg_main.jpg)
-	height: 100vh
+	height: 100vh	
+	background-image: url(../img/bg_main.jpg)	
+	
 	div
 		position: fixed
-		text-align: center
-		width: 100%
+		text-align: center		
 		left: 0
-		&:nth-child(1)	
-			top: 30vh
-			h1
-				color: rgba(237, 35, 64, 0.75);
+		top: 15%
+		width: 100vw
+		margin: 0 auto		
+		&:nth-child(1)				
+			h1							
+				line-height: 2.2em
 				font-size: 15em
-				font-weight: 900
-		&:nth-child(2)	
-			top: 5vh
+				font-weight: 900				
+				color: rgba(237, 35, 64, 0.75)
+		&:nth-child(2)				
 			h2
-				color: rgba(237, 35, 64, 0.25);
-				font-size: 32em
+				font-size: 22em
 				font-weight: 900
-		&:nth-child(3)	
-			top: 60vh
-			left: 15vh
+				color: rgba(237, 35, 64, 0.25)
+		&:nth-child(3)				
+			line-height: 930px //костыль
+			left: 150px
 			p
 				color: #fff
 				font-size: 2em
-				font-weight: 300
+				font-weight: 300		
 
-// dddddddddddddddddddddddddddddddddddd				
+		
+		h2
+			animation-delay: .5s	
+		h1
+			animation-delay: 1s			
+		p
+			animation-delay: 1.5s		
+
+//////////////////////////////////////	
+// Offer page
+//////////////////////////////////////				
 .right-col-offer
 	ul
 		width: 100%				
@@ -174,12 +166,13 @@ a
 				box-sizing: border-box
 				color: $accent-color
 				background: rgba(31, 35, 53, 0.65)
-				background: linear-gradient(to top, rgba(31, 35, 53, 0.6509803921568628), rgba(237, 35, 64, 0))
+				background: linear-gradient(to top, rgba(31, 35, 53, 0.65), rgba(237, 35, 64, 0))
 			.pointer	
 				float: right
 
-	
-
+//////////////////////////////////////	
+// Social page
+//////////////////////////////////////	
 .right-col-social	
 	.tweet			
 		padding: 30px 		
@@ -209,6 +202,9 @@ a
 			&:nth-child(3) 				
 				margin-top: 5px
 
+//////////////////////////////////////	
+// Contact page
+//////////////////////////////////////	
 .right-col-contact	
 	.item	
 		padding: 20px
@@ -221,32 +217,30 @@ a
 				text-transform: uppercase	
 				margin-bottom: 10px
 			&:nth-child(2) 
-				font-size: 1em	
-				// line-height: 1.5em
-		&:nth-child(4) 
-			// font-size: 1.2em	
+				font-size: 1em					
+		&:nth-child(4) 			
 			margin-top: 15px
 			.group
 				position: relative	
 				width: 300px
 				input
 					width: 100%
-					height: 45px 
+					height: 50px 
 					margin-top: 20px
 					border: 1px solid $bg-color-2 
 					background: $bg-color-2 !important
 					padding: 10px 20px	
-					font-size: .7em 
+					font-size: 1em
 					color: #fff
 					+mt(.5s)
 					&:hover, &:focus				
-						border-bottom: 1px solid $accent-color 				
+						border-bottom: 1px solid $accent-color 	
 					&:focus ~ label, &:valid ~ label
-						top: 3px						
+						top: 0					
 						color: $accent-color
 						+mt(.3s)	
 				label					
-					font-size: .8em
+					font-size: .9em
 					font-weight: normal
 					position: absolute
 					pointer-events: none
@@ -256,17 +250,22 @@ a
 	.send
 		height: 45px		
 		color: #fff
-		border: none;
+		border: none
 		border-radius: unset
-		padding-top: 10px					
+		padding-top: 10px	
+		font-size: inherit
+
 		font-weight: 600
 		background-color: unset
 		text-transform: uppercase
 		&:focus
-			box-shadow: none	
-		
+			box-shadow: none			
+		&:hover
+			color: $accent-color	
 				
-				
+//////////////////////////////////////	
+// Backgrounds
+//////////////////////////////////////				
 .left-col-offer				
 	background-image: url(../img/bg_main_left_offer.jpg)	
 .left-col-social		
@@ -281,4 +280,7 @@ a
 .right-col-contact			
 	background-image: url(../img/bg_main_right_contact.jpg)
 
+//////////////////////////////////////	
+// Всегда в конце
+//////////////////////////////////////	
 @import "media"
