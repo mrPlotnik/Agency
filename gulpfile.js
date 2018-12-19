@@ -5,6 +5,7 @@ var
 		pug 					= require('gulp-pug'),
 
 		sass 					= require('gulp-sass'),	
+		cssScss 			= require('gulp-css-scss'),
 		autoprefixer 	= require('gulp-autoprefixer'),
 		compressCSS		= require('gulp-csso'),
 		rename 				= require('gulp-rename'),		
@@ -18,22 +19,31 @@ var
 		del           = require('del'),		
 
 		browserSync 	= require('browser-sync'),
-		ftp 					= require('vinyl-ftp');
+		ftp 					= require('vinyl-ftp');		
 		
+//-------------------------------------------
+// Компилируем CSS в SCSS
+//-------------------------------------------		
+gulp.task('css-scss', () => {
+  return gulp.src('app/libs/animate.css/animate.min.css')
+    .pipe(cssScss())
+    .pipe(gulp.dest('app/libs/animate.css/'));
+});
+
 //------------------------------------------
 // Компилируем SASS в CSS
 // 1. Читаемый вариант
 // 2. Переименовываем, добавляем префиксы,
 // минифицируем
 //------------------------------------------
-gulp.task('sass', function () {
+gulp.task('sass', ['css-scss'], () => {
 	return gulp.src("app/sass/**/*.sass")
 	.pipe(sass({     
 			outputStyle: 'expand',
       includePaths: require('node-bourbon').includePaths
     }).on('error', sass.logError))
 	.pipe(autoprefixer(['last 15 versions']))
-	// .pipe(compressCSS())
+	.pipe(compressCSS()) // Можно отключить для наглядности или тестов
 	.pipe(rename({suffix: '.min', prefix : ''}))
 	.pipe(gulp.dest('app/css'))
 	.pipe(filesize())		
@@ -43,7 +53,7 @@ gulp.task('sass', function () {
 //-------------------------------------------
 // Компилируем Pug в HTML
 //-------------------------------------------
-gulp.task('pug', function () {
+gulp.task('pug', () => {
 	return gulp.src([
 		"app/pug/index.pug",
 		"app/pug/page/offer.pug",
@@ -59,7 +69,7 @@ gulp.task('pug', function () {
 //--------------------------------------------
 // Минимизируем наш common.js 
 //--------------------------------------------
-gulp.task('js', function() {
+gulp.task('js', () => {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
 		'app/js/common.js',
@@ -70,6 +80,9 @@ gulp.task('js', function() {
 	.pipe(browserSync.reload({stream: true}));
 });
 
+//--------------------------------------------
+// Запускаем сервер 
+//--------------------------------------------
 gulp.task('browser-sync', function() {
 	browserSync({
 		server: {
@@ -91,14 +104,14 @@ gulp.task('imagemin', () =>
 //----------------------------------------------
 // Очистка директории
 //----------------------------------------------
-gulp.task('removedist', function() {
+gulp.task('removedist', () => {
 	return del.sync('dist'); 
 });
 
 //----------------------------------------------
 // Сборка проекта
 //----------------------------------------------
-gulp.task('build', ['removedist', 'imagemin', 'pug', 'sass', 'js'], function() {
+gulp.task('build', ['removedist', 'imagemin', 'pug', 'sass', 'js'], () => {
 
 	var buildFiles = gulp.src([
 		'app/*.html',		
@@ -110,7 +123,7 @@ gulp.task('build', ['removedist', 'imagemin', 'pug', 'sass', 'js'], function() {
 
 	var buildJs = gulp.src([
 		'app/js/scripts.min.js',
-		]).pipe(gulp.dest('dist/js'));
+		]).pipe(gulp.dest('dist/js'));	
 
 	// var buildFonts = gulp.src([
 	// 	'app/fonts/**/*',
@@ -121,7 +134,7 @@ gulp.task('build', ['removedist', 'imagemin', 'pug', 'sass', 'js'], function() {
 //---------------------------------------------
 // Vynil-FTP. Деплой на сервер
 //---------------------------------------------
-gulp.task( 'deploy', function () {
+gulp.task( 'deploy', () => {
 
 	var conn = ftp.create( {
 		host:     'files.000webhost.com',
@@ -145,7 +158,7 @@ gulp.task( 'deploy', function () {
 //----------------------------------------------
 // Наблюдаем за изменениями, компилируем, перезагружаем
 //----------------------------------------------
-gulp.task('watch', ['sass', 'pug', 'js', 'browser-sync'], function() {
+gulp.task('watch', ['sass', 'pug', 'js', 'browser-sync'], () => {
 	gulp.watch('app/sass/**/*.sass', ['sass']);
 	gulp.watch('app/pug/**/*.pug', ['pug']);
 	gulp.watch('app/js/common.js', ['js']);
