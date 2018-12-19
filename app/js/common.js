@@ -1,29 +1,8 @@
-$(document).ready(function() {	
+$(document).ready(function() {
 
-	// load();
-		
-	// Прелоадер
-	function load() {
-		$(".loader_in").fadeOut();
-		$(".loader").fadeOut("slow");	
-	};
-	
-
-	// Всплывающие треугольники при наведении
-	function liHover() {
-		$(".right-col ul li img").hide();
-
-		$(".right-col ul li").hover(
-			function() {
-				$(this).find("img").removeClass("fadeOutLeft").show().addClass("fadeInLeft").css("animation-delay", ".1s");	
-			},
-			function() {
-				$(this).find("img").removeClass("fadeInLeft").addClass("fadeOutLeft").css("animation-delay", ".1s");			
-			}
-		);
-	};
-	
-
+	/////////////////////////////////////////
+	// ПОВЕДЕНИЕ МЕНЮ	
+	/////////////////////////////////////////
 	$(".toggle_mnu").toggleClass("not-active");	
 
 	$(".toggle_mnu").click(function() {
@@ -39,20 +18,19 @@ $(document).ready(function() {
 
 	$(".toggle_mnu").click(function() {
 		if ($(".top_mnu").is(":visible")) {			
-			$(".top_mnu").fadeOut(600);			
-			$(".r-mid div").removeClass("fadeIn animated");
-			$(".top_mnu li a").removeClass("fadeInRight animated");
+			$(".top_mnu").fadeOut(600);					
 		} else {			
 			$(".top_mnu").fadeIn(600);
 			$(".r-mid div").addClass("fadeIn animated");
 			$(".top_mnu li a").addClass("fadeInRight animated");
-			
+			$(".r-mid-2").addClass("fadeIn animated");
+			$(".r-bot").addClass("fadeIn animated");			
 		};
 	});
 
-
-
-	// СТРАНИЦЫ САЙТА	
+	/////////////////////////////////////////
+	// 	ПОВЕДЕНИЕ СТРАНИЦ САЙТА	
+	/////////////////////////////////////////
 		// При загрузке
 		$(document).ready(function() {		
 			function show() {
@@ -62,9 +40,11 @@ $(document).ready(function() {
 					success: function(html) {
 						$(".content").html(html);
 					}
+				}).done(function() { // Если успешно	
+					mainPageAnimation();
 				});
 			}
-			show();	
+			show();			
 		});
 
 		// При клике по LOGO
@@ -77,6 +57,7 @@ $(document).ready(function() {
 						$(".content").html(html);
 					}
 				}).done(function() { // Если успешно							
+					mainPageAnimation()
 				});
 			}
 			show();		
@@ -92,8 +73,8 @@ $(document).ready(function() {
 						$(".content").html(html);
 					}
 				}).done(function() { // Если успешно
-					liHover();
-					heightDetect();
+					offerPageLiHover();
+					fixedTextWidth();
 					load();
 				});
 			}
@@ -110,7 +91,7 @@ $(document).ready(function() {
 						$(".content").html(html);
 					}
 				}).done(function() { // Если успешно				
-					heightDetect();
+					fixedTextWidth();
 					load();
 				});
 			}
@@ -127,25 +108,43 @@ $(document).ready(function() {
 						$(".content").html(html);
 					}
 				}).done(function() { // Если успешно				
-					heightDetect();
+					fixedTextWidth();
 					load();
 				});
 			}
 			show();			
 		});		
 
+	 // Прелоадер
+	function load() {
+		$(".loader_in").fadeOut();
+		$(".loader").fadeOut("slow");	
+	};		
 
-	// Ширина фикстрованного текста равна высоте документа
-	function heightDetect() {
-		var bottom = $(".fixed-text").width()/3;
-		console.log(bottom);
-		
-		$(".fixed-text").css("bottom", bottom);		
-	};
+	// Анимация Main Page
+	function mainPageAnimation() {
+		$(".main h2").addClass("fadeIn animated");
+	 	$(".main h1").addClass("zoomIn animated");					 	
+	 	$(".main p").addClass("bounceInLeft animated");		
+	 };
 
-	
-		
-	
+	// Ширина .fixed-text равна высоте документа
+	function fixedTextWidth() {
+		var top = $(".fixed-text").width()/3;
+		$(".fixed-text").css("top", top);		
+	};	
 
-});  	
-		
+	// Всплывающие треугольники при наведении
+	function offerPageLiHover() {
+		$(".right-col ul li img").hide();
+		$(".right-col ul li").hover(
+			function() {
+				$(this).find("img").removeClass("fadeOutLeft").show().addClass("fadeInLeft").css("animation-delay", ".1s");	
+			},
+			function() {
+				$(this).find("img").removeClass("fadeInLeft").addClass("fadeOutLeft").css("animation-delay", ".1s");			
+			}
+		);
+	};	
+
+}); 
