@@ -1,6 +1,9 @@
 {
   "name": "Agency",
   "version": "1.0.0",
+  "main": "gulpfile.js",
+  "author": "Andrey Plotnikov",
+  "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.26.3",
     "del": "^3.0.0",
