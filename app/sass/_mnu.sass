@@ -1,10 +1,10 @@
 .toggle_mnu	
-	width: 70px
-	height: 70px
+	width: 5em
+	height: 5em
 	position: fixed
 	z-index: 100
 	border: none
-	right: 70px
+	right: 5em
 	top: 0
 	background-color: $accent-color
 	cursor: pointer
@@ -12,7 +12,7 @@
 	font-size: .9em
 	font-weight: 900
 	text-transform: uppercase
-	padding-top: 20px
+	padding-top: 1.5em
 	animation: pulse 2s infinite
 	z-index: 50
 	&:hover 
@@ -28,19 +28,19 @@
 .top_mnu
 	position: fixed
 	display: none
-	width: 400px
+	width: 22em
 	height: 100%	
 	right: 0
 	top: 0
 	font-size: 1.1em
 	text-align: right	
 	background-color: rgba(31, 35, 53, 0.85)	
-	z-index: 2
+	z-index: 3
 
 .r-wrap
 	width: 100%
-	margin-right: 70px	
-	text-transform: none
+	margin-right: 5em	
+	text-transform: none	
 	font-weight: 300	
 	.r-top		
 		height: 35vh
@@ -54,9 +54,7 @@
 			padding: 0
 			margin: 0
 			li
-				text-align: right
-				p
-					padding-right: 70px
+				text-align: right				
 				&:nth-child(1) a						
 					animation-delay: 0s
 				&:nth-child(2) a						
@@ -70,7 +68,7 @@
 				font-size: .9em
 				font-weight: 900
 				position: relative
-				height: 40px				
+				height: 2em				
 				&:hover
 					color: $accent-color	
 				p
@@ -84,38 +82,39 @@
 		.policy	
 			text-transform: uppercase			
 			font-weight: 300
-			margin-bottom: 40px		
+			margin-bottom: 2.5em		
 			a
 				color: #888	
 		.copy	
 			p
 				&:nth-child(1)
-					margin-bottom: 10px
+					margin-bottom: .5em
 				&:nth-child(2)
 					text-transform: uppercase	
 	.r-bot	
 		height: auto
-		width: 215px
+		width: 15em
+		float: right
 		position: fixed
 		bottom: 0
-		right: 70px
+		right: 5em
 		animation-delay: 0.6s
 		p
 			font-size: .8em
-			margin-bottom: 10px
+			margin-bottom: .5em
 		.icons
 			width: 65%
 			float: right			
 			border-top: 1px solid $accent-color
 			div
 				display: inline-block		
-				height: 40px		
+				height: 2.5em		
 				+mt(.3s)				
 				&:hover
 					background-color: $accent-color	
 				img
-					width: 40px			
-					padding: 10px			
+					width: 2em		
+					padding: .5em			
 								
 	.r-mid
 		animation-duration: 0.01s		
@@ -133,10 +132,3 @@
 		box-shadow: 0 0 0 7px rgba(237, 35, 64, 0)
 	100%    
 		box-shadow: 0 0 0 0 rgba(237, 35, 64, 0)
-
-
-
-
-
-
-	

@@ -31,8 +31,8 @@ a
 //////////////////////////////////////	
 // Лоадер
 //////////////////////////////////////	
-.loader-page		
-	z-index: -1		
+.loader	
+	z-index: 1		
 
 //////////////////////////////////////	
 // Стрелочка .other-services, .send
@@ -46,18 +46,18 @@ a
 //////////////////////////////////////	
 .logo, .other-services
 	position: fixed	
-	z-index: 1 
+	z-index: 2
 	
 .logo	
-	left: 85px	
+	left: 5em	
 	.img
-		width: 100px		
+		width: 6em		
 
 .other-services	
-	bottom: 50px
-	left: 80px	
+	bottom: 3em
+	left: 5em	
 	p
-		margin-bottom: 10px		
+		margin-bottom: 0.5em		
 		font-size: 0.9em			
 		&:nth-child(2)	
 			text-transform: uppercase	
@@ -66,7 +66,7 @@ a
 //////////////////////////////////////		
 // Фоновые картинки
 //////////////////////////////////////
-.main-head
+.section
 	height: 100vh		
 	.left-col, .right-col, .main
 		background-size: cover
@@ -76,25 +76,25 @@ a
 // Общая структура
 //////////////////////////////////////	
 .content	
-	font-size: 1.2em
+	// font-size: 1em
 	.left-col
 		position: fixed	
+		height: 100vh
 		left: 0	
 		justify-content: flex-end
 		z-index: 2
 		.l-wrap
-			margin: 150px 70px 0
+			margin: 10em 3em 0
 			text-align: left
 			.l-mid-1
-				margin: 0 0 8vh
-				padding-bottom: 10px
-				font-weight: 900	
+				font-size: .9em
+				margin: 0 0 5em				
+				font-weight: 600	
 				color: $accent-color
 				text-transform: uppercase	
 			.l-mid-2				
 				font-size: .9em
-				line-height: 1.5em
-				font-weight: 600			
+				line-height: 1.5em					
 	.right-col	
 		position: absolute
 		right: 0	
@@ -102,49 +102,43 @@ a
 		min-height: 100vh
 		padding-bottom: 10vh		
 		.r-wrap			
-			margin: 150px 0 0
+			margin: 8em 0 0
 			z-index: 1
 			
 //////////////////////////////////////	
-// Main
+// 1-main
 //////////////////////////////////////	
-.main
-	height: 100vh	
+#main
+	height: 100vh
+	text-align: center
 	background-image: url(../img/bg_main.jpg)	
-	
-	div
-		position: fixed
-		text-align: center		
-		left: 0
-		top: 15%
-		width: 100vw
-		margin: 0 auto		
-		&:nth-child(1)				
-			h1							
-				line-height: 2.2em
-				font-size: 15em
-				font-weight: 900				
-				color: rgba(237, 35, 64, 0.75)
-		&:nth-child(2)				
-			h2
-				font-size: 22em
-				font-weight: 900
-				color: rgba(237, 35, 64, 0.25)
-		&:nth-child(3)				
-			line-height: 930px //костыль
-			left: 150px
-			p
-				color: #fff
-				font-size: 2em
-				font-weight: 300		
-
 		
-		h2
-			animation-delay: .5s	
+	div	
+		position: absolute
+		width: 100vw
+		&:nth-child(1)		
 		h1
-			animation-delay: 1s			
-		p
-			animation-delay: 1.5s		
+			font-size: 10em
+			font-weight: 900				
+			color: rgba(237, 35, 64, 0.75)	
+		&:nth-child(2)
+			h2
+				font-size: 17em
+				font-weight: 900
+				margin-top: -0.1em
+				color: rgba(237, 35, 64, 0.25)
+		&:nth-child(3)
+			p
+				font-size: 1.5em
+				font-weight: 300
+				margin: 6.7em	0 0 6em
+				color: #fff	
+	h2
+		animation-delay: .5s	
+	h1
+		animation-delay: 1s			
+	p
+		animation-delay: 1.5s		
 
 //////////////////////////////////////	
 // Offer page
@@ -158,7 +152,7 @@ a
 			font-weight: 900
 			line-height: 1
 			text-transform: uppercase
-			padding: 30px 100px	30px 25px		
+			padding: 1em 		
 			border-bottom: 2px solid rgba(0, 0, 0, 0)
 			+mt(.5s)		
 			&:hover
