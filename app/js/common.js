@@ -35,29 +35,31 @@ $(document).ready(function() {
 		$(document).ready(function() {		
 			function show() {
 				$.ajax({
-					url: "main.html",
+					url: "1-main.html",
 					cache: false,
 					success: function(html) {
 						$(".content").html(html);
 					}
 				}).done(function() { // Если успешно	
 					mainPageAnimation();
+					load();
 				});
 			}
-			show();			
+			show();						
 		});
 
 		// При клике по LOGO
 		$("#logo").click(function() {		
 			function show() {
 				$.ajax({
-					url: "main.html",
+					url: "1-main.html",
 					cache: false,
 					success: function(html) {
 						$(".content").html(html);
 					}
 				}).done(function() { // Если успешно							
 					mainPageAnimation()
+					load();
 				});
 			}
 			show();		
@@ -67,7 +69,7 @@ $(document).ready(function() {
 		$("#offer").click(function() {		
 			function show() {
 				$.ajax({
-					url: "offer.html",
+					url: "2-offer.html",
 					cache: false,
 					success: function(html) {
 						$(".content").html(html);
@@ -85,7 +87,7 @@ $(document).ready(function() {
 		$("#social").click(function() {		
 			function show() {
 				$.ajax({
-					url: "../social.html",
+					url: "3-social.html",
 					cache: false,
 					success: function(html) {
 						$(".content").html(html);
@@ -102,7 +104,7 @@ $(document).ready(function() {
 		$("#contact").click(function() {		
 			function show() {
 				$.ajax({
-					url: "../contact.html",
+					url: "4-contact.html",
 					cache: false,
 					success: function(html) {
 						$(".content").html(html);
@@ -111,14 +113,13 @@ $(document).ready(function() {
 					fixedTextWidth();
 					load();
 				});
-			}
-			show();			
+			};			
+      show();	
 		});		
 
 	 // Прелоадер
-	function load() {
-		$(".loader_in").fadeOut();
-		$(".loader").fadeOut("slow");	
+	function load() {		
+		$(".loader").fadeOut('slow');	
 	};		
 
 	// Анимация Main Page
