@@ -1,8 +1,12 @@
 node_modules
-app/css
-app/libs
-app/fonts
-app/js/scripts.min.js
 dist
 
+app/libs
+
+app/css
+app/fonts
+app/js/scripts.min.js
 *.html
+
+debug.log
+package-lock.json
