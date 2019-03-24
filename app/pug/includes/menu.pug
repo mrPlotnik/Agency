@@ -1,9 +1,9 @@
 button.toggle_mnu
-nav.top_mnu.container
-	.row.row-flex
-		.r-wrap
-			.r-top
-			.r-mid-1
+nav.mnu.container
+	.row.h-100
+		.container.wrap
+			.row.r-top
+			.row.r-mid.justify-content-end
 				ul
 					li
 						a(href="#" id="offer") 
@@ -20,22 +20,23 @@ nav.top_mnu.container
 							p 
 								| contact
 							span
-			.r-mid-2
-				.policy
-					a(href="#") private policy | 
-					a(href="#") site map
-				.copy
-					p © Copyright 2005-2018 93AGENCY
-					p Crafted by plotnik
-			.r-bot
-				p Follow us on social network
-				.icons
-					div
-						a(href="#")
-							img(src="img/twitter50.svg", alt="")
-					div
-						a(href="#")
-							img(src="img/facebook50.svg", alt="")
-					div
-						a(href="#")
-							img(src="img/linkedin50.svg", alt="")
+			.row.r-bot.justify-content-end
+				.align-self-end
+					.policy
+						a(href="#") private policy | 
+						a(href="#") site map
+					.copy
+						p © Copyright 2005-2018 93AGENCY
+						p Crafted by plotnik
+					.follow
+						p Follow us on social network
+						.icons
+							div
+								a(href="#")
+									img(src="img/twitter50.svg", alt="")
+							div
+								a(href="#")
+									img(src="img/facebook50.svg", alt="")
+							div
+								a(href="#")
+									img(src="img/linkedin50.svg", alt="")

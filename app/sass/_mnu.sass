@@ -25,105 +25,89 @@
 	&::after
 		content: "close"
 
-.top_mnu
+.mnu
 	position: fixed
 	display: none
-	width: 22em
+	width: 20em
 	height: 100%	
 	right: 0
 	top: 0
-	font-size: 1.1em
+	// font-size: 1.1em
 	text-align: right	
 	background-color: rgba(31, 35, 53, 0.85)	
 	z-index: 3
 
-.r-wrap
-	width: 100%
-	margin-right: 5em	
-	text-transform: none	
-	font-weight: 300	
-	.r-top		
-		height: 35vh
-	.r-mid-1
-		height: 35vh		
-		ul, li
-			list-style-type: none
-			width: 100%
-			font-size: 1.2em
-		ul			
-			padding: 0
-			margin: 0
-			li
-				text-align: right				
-				&:nth-child(1) a						
-					animation-delay: 0s
-				&:nth-child(2) a						
-					animation-delay: 0.1s
-				&:nth-child(3) a						
-					animation-delay: 0.2s
-				
-			a				
-				display: block
-				text-transform: uppercase
-				font-size: .9em
-				font-weight: 900
-				position: relative
-				height: 2em				
-				&:hover
-					color: $accent-color	
+	.wrap
+		width: 100%
+		margin-right: 5em		
+		.r-top		
+			height: 30vh
+		.r-mid
+			height: 25vh		
+			ul, li
+				list-style-type: none
+				// width: 100%
+				font-size: 1.2em
+			ul			
+				padding: 0
+				margin: 0
+				li
+					text-align: right				
+					&:nth-child(1) a						
+						animation-delay: 0s
+					&:nth-child(2) a						
+						animation-delay: 0.1s
+					&:nth-child(3) a						
+						animation-delay: 0.2s
+					
+				a				
+					display: block
+					text-transform: uppercase
+					font-size: .9em
+					font-weight: 900
+					position: relative
+					height: 2em				
+					&:hover
+						color: $accent-color	
+					p
+						margin: 0
+						padding: 0	
+		.r-bot
+			font-size: .6em
+			height: 45vh		
+			animation-delay: 0.5s
+			.policy	
+				text-transform: uppercase			
+				font-weight: 300
+				margin-bottom: .6em		
+				a
+					color: #888	
+			.copy	
 				p
-					margin: 0
-					padding: 0	
-
-	.r-mid-2
-		height: 15vh
-		font-size: .7em
-		animation-delay: 0.5s
-		.policy	
-			text-transform: uppercase			
-			font-weight: 300
-			margin-bottom: 2.5em		
-			a
-				color: #888	
-		.copy	
-			p
-				&:nth-child(1)
-					margin-bottom: .5em
-				&:nth-child(2)
-					text-transform: uppercase	
+					&:nth-child(1)
+						margin-bottom: 0
+					&:nth-child(2)
+						text-transform: uppercase	
+						margin-bottom: 1.5em
+			.follow	
+				p
+					margin-bottom: .6em
+				.icons
+					width: 15em
+					float: right			
+					border-top: 1px solid $accent-color
+					padding-bottom: 1em
+					div
+						display: inline-block		
+						// height: 2.5em		
+						+mt(.3s)				
+						&:hover
+							background-color: $accent-color	
+						img
+							width: 2.5em
+							padding: .5em	
 	.r-bot	
-		height: auto
-		width: 15em
-		float: right
-		position: fixed
-		bottom: 0
-		right: 5em
-		animation-delay: 0.6s
-		p
-			font-size: .8em
-			margin-bottom: .5em
-		.icons
-			width: 65%
-			float: right			
-			border-top: 1px solid $accent-color
-			div
-				display: inline-block		
-				height: 2.5em		
-				+mt(.3s)				
-				&:hover
-					background-color: $accent-color	
-				img
-					width: 2em		
-					padding: .5em			
-								
-	.r-mid
-		animation-duration: 0.01s		
-		.r-mid-2						
-			animation-delay: 0.9s	
-		.r-mid-3 	
-			animation-delay: 1s
-		.r-bot	
-			animation-delay: 1.1s	
+		animation-delay: 1s	
 
 @keyframes pulse  
 	0%    
