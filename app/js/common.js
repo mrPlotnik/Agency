@@ -10,20 +10,18 @@ $(document).ready(function() {
 		$(this).toggleClass("not-active");	
 	});
 
-	$(".top_mnu a").click(function() {
-		$(".top_mnu").fadeOut(600);		
+	$(".mnu a").click(function() {
+		$(".mnu").fadeOut(600);		
 		$(".toggle_mnu").toggleClass("active");
 		$(".toggle_mnu").toggleClass("not-active");
 	});
 
 	$(".toggle_mnu").click(function() {
-		if ($(".top_mnu").is(":visible")) {			
-			$(".top_mnu").fadeOut(600);					
+		if ($(".mnu").is(":visible")) {			
+			$(".mnu").fadeOut(600);					
 		} else {			
-			$(".top_mnu").fadeIn(600);
-			$(".r-mid div").addClass("fadeIn animated");
-			$(".top_mnu li a").addClass("fadeInRight animated");
-			$(".r-mid-2").addClass("fadeIn animated");
+			$(".mnu").fadeIn(600);			
+			$(".mnu li a").addClass("fadeInRight animated");			
 			$(".r-bot").addClass("fadeIn animated");			
 		};
 	});
