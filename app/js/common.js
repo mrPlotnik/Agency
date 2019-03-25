@@ -9,7 +9,7 @@ $(document).ready(function() {
 		$(this).toggleClass("active");	
 		$(this).toggleClass("not-active");	
 	});
-
+	
 	$(".mnu a").click(function() {
 		$(".mnu").fadeOut(600);		
 		$(".toggle_mnu").toggleClass("active");
