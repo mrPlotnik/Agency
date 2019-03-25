@@ -1,5 +1,6 @@
 var gulp 					= require('gulp'),			
 		pug 					= require('gulp-pug'),
+		plumber 			= require('gulp-plumber'),
 		sass 					= require('gulp-sass'),	
 		cssToScss  		= require('gulp-css-scss'),
 		autoprefixer 	= require('gulp-autoprefixer'),
@@ -11,6 +12,7 @@ var gulp 					= require('gulp'),
 		cache         = require('gulp-cache'),
 		filesize			= require('gulp-size'),
 		del           = require('del'),		
+		gutil         = require('gulp-util'),		
 		browserSync 	= require('browser-sync'),
 		ftp 					= require('vinyl-ftp');		
 		
@@ -25,6 +27,7 @@ gulp.task('pug', () => {
 		"app/pug/page/4-contact.pug",	
 		"app/pug/index.pug",
 	])
+	.pipe(plumber())
 	.pipe(pug({pretty: true}))
 	.pipe(gulp.dest('dist/'))	
 	.pipe(browserSync.reload({stream: true}))
@@ -75,7 +78,6 @@ gulp.task('browser-sync', () => {
 		notify: false // Отключаем уведомления
 	});
 });
-
 
 //---------------------------------------------
 // Vynil-FTP. Деплой на сервер

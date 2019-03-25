@@ -1,3 +1,5 @@
-npm i gulp--save-dev<br>
-bower i<br>
-gulp<br>
+https://goo.gl/4EDGdm
+
+npm i --save-dev
+bower i --save-dev
+gulp 
