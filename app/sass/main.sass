@@ -11,15 +11,17 @@
 	user-select: none
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0) // Отключаем цвет подсветки ссылки или любого кликабельного JavaScript элемента при касании
 	&:active, &:focus
-		outline: none
+		outline: none !important
 
 body	
 	background-color: $bg_color
 	color: $text-color
 	font-size: 16px
 	font-family: Arial, sans-serif	
-		 
-// Ссылки	
+
+//////////////////////////////////////		 
+// Ссылки
+//////////////////////////////////////	
 a	
 	color: #fff
 	+mt(.3s)
@@ -94,7 +96,9 @@ a
 	height: 100vh
 	text-align: center
 	background-image: url(../img/bg_main.jpg)	
-		
+	background-size: cover
+	background-position-y: center		
+	// overflow: hidden
 	div	
 		position: absolute
 		width: 100vw
@@ -117,10 +121,8 @@ a
 				color: #fff	
 	h2
 		animation-delay: .5s	
-	h1
-		animation-delay: 1s			
-	p
-		animation-delay: 1.5s		
+	h1, p
+		animation-delay: 1s		
 
 //////////////////////////////////////	
 // Offer page
