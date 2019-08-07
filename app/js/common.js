@@ -34,13 +34,13 @@ $(document).ready(function() {
 			function show() {
 				$.ajax({
 					url: "1-main.html",
-					cache: false,
+					cache: true,
 					success: function(html) {
 						$(".content").html(html);
 					}
 				}).done(function() { // Если успешно	
 					mainPageAnimation();
-					load();
+					loaderOut();
 				});
 			}
 			show();						
@@ -48,34 +48,36 @@ $(document).ready(function() {
 
 		// При клике по LOGO
 		$("#logo").click(function() {		
+			loaderIn();
 			function show() {
 				$.ajax({
 					url: "1-main.html",
-					cache: false,
+					cache: true,
 					success: function(html) {
 						$(".content").html(html);
 					}
 				}).done(function() { // Если успешно							
 					mainPageAnimation()
-					load();
+					loaderOut();
 				});
 			}
 			show();		
 		});	
 
 		// При клике по ссылке OFFER 
-		$("#offer").click(function() {		
+		$("#offer").click(function() {	
+			loaderIn();	
 			function show() {
 				$.ajax({
 					url: "2-offer.html",
-					cache: false,
+					cache: true,
 					success: function(html) {
 						$(".content").html(html);
 					}
 				}).done(function() { // Если успешно
 					offerPageLiHover();
 					fixedTextWidth();
-					load();
+					loaderOut();
 				});
 			}
 			show();		
@@ -83,16 +85,17 @@ $(document).ready(function() {
 
 		// При клике по ссылке SOCIAL 
 		$("#social").click(function() {		
+			loaderIn();
 			function show() {
 				$.ajax({
 					url: "3-social.html",
-					cache: false,
+					cache: true,
 					success: function(html) {
 						$(".content").html(html);
 					}
 				}).done(function() { // Если успешно				
 					fixedTextWidth();
-					load();
+					loaderOut();
 				});
 			}
 			show();	
@@ -100,31 +103,36 @@ $(document).ready(function() {
 
 		// При клике по ссылке CONTACT
 		$("#contact").click(function() {		
+			loaderIn();
+			
 			function show() {
 				$.ajax({
 					url: "4-contact.html",
-					cache: false,
+					cache: true,
 					success: function(html) {
 						$(".content").html(html);
 					}
 				}).done(function() { // Если успешно				
 					fixedTextWidth();
-					load();
+					loaderOut();
 				});
-			};			
-      show();	
+			}			
+			show();	
 		});		
 
 	 // Прелоадер
-	function load() {		
-		$(".loader").fadeOut('slow');	
+	function loaderOut() {		
+		$(".loader").delay(500).fadeOut(300);
+	};	
+	function loaderIn() {			
+		$(".loader").fadeIn(300);
 	};		
 
 	// Анимация Main Page
 	function mainPageAnimation() {
-		$(".main h2").addClass("fadeIn animated");
-	 	$(".main h1").addClass("zoomIn animated");					 	
-	 	$(".main p").addClass("bounceInLeft animated");		
+		$("#main h2").addClass("fadeIn animated");
+	 	$("#main h1").addClass("zoomIn animated");					 	
+	 	$("#main p").addClass("fadeInLeft animated");		
 	 };
 
 	// Ширина .fixed-text равна высоте документа
